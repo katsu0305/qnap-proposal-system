@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>業種別ソリューション - QNAP NAS ソリューション</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- ヘッダー -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="fas fa-server me-2"></i>QNAP NAS ソリューション
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">ホーム</a></li>
+                    <li class="nav-item"><a class="nav-link" href="selection.html">製品選定</a></li>
+                    <li class="nav-item"><a class="nav-link" href="comparison.html">製品比較</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="solutions.html">業種別ソリューション</a></li>
+                    <li class="nav-item"><a class="nav-link" href="estimate.html">見積もり作成</a></li>
+                    <li class="nav-item"><a class="nav-link" href="cases.html">導入事例</a></li>
+                    <li class="nav-item"><a class="nav-link" href="technical.html">技術資料</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ヘッダーセクション -->
+    <section class="bg-primary text-white py-5">
+        <div class="container text-center">
+            <h1 class="display-4 fw-bold mb-3">業種別ソリューション</h1>
+            <p class="lead">業種ごとに最適化されたQNAP NASの活用方法をご提案</p>
+        </div>
+    </section>
+
+    <!-- 業種選択 -->
+    <section class="py-4 bg-light">
+        <div class="container">
+            <div class="row g-3">
+                <div class="col-md-3">
+                    <button class="btn btn-outline-primary w-100" onclick="showIndustry('manufacturing')">
+                        <i class="fas fa-industry me-2"></i>製造業
+                    </button>
+                </div>
+                <div class="col-md-3">
+                    <button class="btn btn-outline-primary w-100" onclick="showIndustry('medical')">
+                        <i class="fas fa-hospital me-2"></i>医療・福祉
+                    </button>
+                </div>
+                <div class="col-md-3">
+                    <button class="btn btn-outline-primary w-100" onclick="showIndustry('video')">
+                        <i class="fas fa-video me-2"></i>映像制作
+                    </button>
+                </div>
+                <div class="col-md-3">
+                    <button class="btn btn-outline-primary w-100" onclick="showIndustry('design')">
+                        <i class="fas fa-pencil-ruler me-2"></i>設計・CAD
+                    </button>
+                </div>
+                <div class="col-md-3">
+                    <button class="btn btn-outline-primary w-100" onclick="showIndustry('corporate')">
+                        <i class="fas fa-building me-2"></i>一般企業
+                    </button>
+                </div>
+                <div class="col-md-3">
+                    <button class="btn btn-outline-primary w-100" onclick="showIndustry('construction')">
+                        <i class="fas fa-hard-hat me-2"></i>建設・工事
+                    </button>
+                </div>
+                <div class="col-md-3">
+                    <button class="btn btn-outline-primary w-100" onclick="showIndustry('education')">
+                        <i class="fas fa-school me-2"></i>学校・教育
+                    </button>
+                </div>
+                <div class="col-md-3">
+                    <button class="btn btn-outline-primary w-100" onclick="showIndustry('government')">
+                        <i class="fas fa-landmark me-2"></i>官公庁・自治体
+                    </button>
+                </div>
+                <div class="col-md-3">
+                    <button class="btn btn-outline-primary w-100" onclick="showIndustry('retail')">
+                        <i class="fas fa-shopping-cart me-2"></i>流通・販売
+                    </button>
+                </div>
+                <div class="col-md-3">
+                    <button class="btn btn-outline-primary w-100" onclick="showIndustry('surveillance')">
+                        <i class="fas fa-video me-2"></i>監視カメラ
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 製造業 -->
+    <section class="py-5 industry-section" id="manufacturing">
+        <div class="container">
+            <div class="row align-items-center mb-5">
+                <div class="col-md-6">
+                    <h2 class="mb-4"><i class="fas fa-industry text-primary me-3"></i>製造業向けソリューション</h2>
+                    <h4 class="mb-3">課題</h4>
+                    <ul class="list-unstyled mb-4">
+                        <li class="mb-2"><i class="fas fa-times-circle text-danger me-2"></i>設計図面・製造データの安全な保管</li>
+                        <li class="mb-2"><i class="fas fa-times-circle text-danger me-2"></i>工場間でのデータ共有の効率化</li>
+                        <li class="mb-2"><i class="fas fa-times-circle text-danger me-2"></i>取引先とのファイル送受信</li>
+                        <li class="mb-2"><i class="fas fa-times-circle text-danger me-2"></i>製造履歴データの長期保存</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h4 class="mb-3">QNAP NASで解決</h4>
+                    <ul class="list-unstyled mb-4">
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>RAID 5/6で高信頼性のデータ保護</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>VPN接続で拠点間の安全なデータ共有</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>大容量ファイルも高速転送</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>スナップショット機能で履歴管理</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h4 class="mb-3">推奨製品</h4>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-primary">
+                        <div class="card-body">
+                            <a href="https://www.elecom.co.jp/products/T433EUM104.html" target="_blank">
+                                <img src="images/T433EUM104_01.jpg" alt="TS-433eU" class="img-fluid mb-3" style="max-height: 150px; object-fit: contain; width: 100%;">
+                            </a>
+                            <h5 class="card-title">TS-433eU WD Red</h5>
+                            <p class="text-primary fw-bold">¥25～42万（構成により変動）</p>
+                            <p class="small text-muted mb-2">構成パターンA: 中小規模工場（30人、～20TB）</p>
+                            <ul class="small">
+                                <li>中小規模工場向け</li>
+                                <li>8TB×4、RAID 5、実効24TB</li>
+                                <li>2.5GbE×2で高速アクセス</li>
+                                <li>WD Red（CMR、3年保証）</li>
+                                <li>保守: センドバック3年（¥6万）</li>
+                            </ul>
+                            <a href="comparison.html#ts-433eu" class="btn btn-outline-primary btn-sm w-100 mt-2">詳細を見る</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-warning">
+                        <div class="card-body">
+                            <a href="https://www.elecom.co.jp/products/TH765EUN104.html" target="_blank">
+                                <img src="images/TS-765eU_01.png" alt="TS-h765eU" class="img-fluid mb-3" style="max-height: 150px; object-fit: contain; width: 100%;">
+                            </a>
+                            <h5 class="card-title">TS-h765eU WD Red</h5>
+                            <p class="text-primary fw-bold">¥50～94万（構成により変動）</p>
+                            <p class="small text-muted mb-2">構成パターンB: 中規模工場（50人、24時間稼働）</p>
+                            <ul class="small">
+                                <li>大規模工場向け</li>
+                                <li>8TB×4、RAID 6、実効16TB</li>
+                                <li>高性能CPU、8GB RAM標準</li>
+                                <li>外付けUSB HDD×2（バックアップ）</li>
+                                <li>UPS（1500VA、長時間バックアップ型）</li>
+                                <li>保守: 24h365dオンサイト3年（¥28万）</li>
+                            </ul>
+                            <a href="comparison.html#ts-h765eu" class="btn btn-outline-primary btn-sm w-100 mt-2">詳細を見る</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <a href="https://www.elecom.co.jp/products/TS-H1277AFXF.html" target="_blank">
+                                <img src="images/TS-h1277AFX_01.png" alt="TS-H1277AFX" class="img-fluid mb-3" style="max-height: 150px; object-fit: contain; width: 100%;">
+                            </a>
+                            <h5 class="card-title">TS-H1277AFX エンタープライズ</h5>
+                            <p class="text-primary fw-bold">¥1,050～1,200万（2台構成）</p>
+                            <p class="small text-muted mb-2">構成パターンC: 大規模工場（100人以上、IoT連携）</p>
+                            <ul class="small">
+                                <li>エンタープライズ構成</li>
+                                <li>10TB×12、RAID 6、実効100TB×2台</li>
+                                <li>AMD Ryzen 7 9000シリーズ 8コア</li>
+                                <li>32GB DDR5、10GbE×2</li>
+                                <li>デュアル電源、冗長構成</li>
+                                <li>保守: 24h365dオンサイト5年</li>
+                            </ul>
+                            <a href="comparison.html#ts-h1277afx" class="btn btn-outline-primary btn-sm w-100 mt-2">詳細を見る</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 医療・福祉 -->
+    <section class="py-5 bg-light industry-section" id="medical" style="display: none;">
+        <div class="container">
+            <div class="row align-items-center mb-5">
+                <div class="col-md-6">
+                    <h2 class="mb-4"><i class="fas fa-hospital text-primary me-3"></i>医療・福祉向けソリューション</h2>
+                    <h4 class="mb-3">課題</h4>
+                    <ul class="list-unstyled mb-4">
+                        <li class="mb-2"><i class="fas fa-times-circle text-danger me-2"></i>患者情報の厳重な管理</li>
+                        <li class="mb-2"><i class="fas fa-times-circle text-danger me-2"></i>医療画像データの大容量保存</li>
+                        <li class="mb-2"><i class="fas fa-times-circle text-danger me-2"></i>電子カルテのバックアップ</li>
+                        <li class="mb-2"><i class="fas fa-times-circle text-danger me-2"></i>施設間での情報共有</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h4 class="mb-3">QNAP NASで解決</h4>
+                    <ul class="list-unstyled mb-4">
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>暗号化機能で個人情報を保護</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>大容量ストレージで画像データ保存</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>自動バックアップで災害対策</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>アクセス権限の細かい設定</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h4 class="mb-3">推奨製品</h4>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-primary">
+                        <div class="card-body">
+                            <a href="https://www.elecom.co.jp/products/T433EUM104.html" target="_blank">
+                                <img src="images/T433EUM104_01.jpg" alt="TS-433eU" class="img-fluid mb-3" style="max-height: 150px; object-fit: contain; width: 100%;">
+                            </a>
+                            <h5 class="card-title">TS-433eU WD Red</h5>
+                            <p class="text-primary fw-bold">¥25～38万（機器費+保守）</p>
+                            <p class="small text-muted mb-2">構成パターンA: 小規模クリニック（10人以下、～5TB）</p>
+                            <ul class="small">
+                                <li>クリニック・小規模施設向け</li>
+                                <li>2TB×4、RAID 5、実効6TB</li>
+                                <li>暗号化機能標準装備</li>
+                                <li>外付けUSB HDD（バックアップ用）</li>
+                                <li>UPS（500VA～750VA）</li>
+                                <li>保守: センドバック3年（¥6万）</li>
+                            </ul>
+                            <a href="comparison.html#ts-433eu" class="btn btn-outline-primary btn-sm w-100 mt-2">詳細を見る</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-warning">
+                        <div class="card-body">
+                            <a href="https://www.elecom.co.jp/products/TH765EUN104.html" target="_blank">
+                                <img src="images/TS-765eU_01.png" alt="TS-h765eU" class="img-fluid mb-3" style="max-height: 150px; object-fit: contain; width: 100%;">
+                            </a>
+                            <h5 class="card-title">TS-h765eU ニアライン×2台</h5>
+                            <p class="text-primary fw-bold">¥204万（本番+バックアップ）</p>
+                            <p class="small text-muted mb-2">構成パターンB: 中規模病院（50人、～50TB）</p>
+                            <ul class="small">
+                                <li>本番機+バックアップ機の2台構成</li>
+                                <li>各12TB×4、RAID 6、実効24TB</li>
+                                <li>ニアラインHDD（5年保証、高信頼性）</li>
+                                <li>NAS to NASバックアップ</li>
+                                <li>UPS（1000VA～1500VA）×2台</li>
+                                <li>保守: 本番オンサイト5年、バックアップセンドバック5年</li>
+                            </ul>
+                            <a href="comparison.html#ts-h765eu" class="btn btn-outline-primary btn-sm w-100 mt-2">詳細を見る</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <a href="https://www.elecom.co.jp/products/TS-H1277AFXF.html" target="_blank">
+                                <img src="images/TS-h1277AFX_01.png" alt="TS-H1277AFX" class="img-fluid mb-3" style="max-height: 150px; object-fit: contain; width: 100%;">
+                            </a>
+                            <h5 class="card-title">TS-H1277AFX×2 + クラウド</h5>
+                            <p class="text-primary fw-bold">¥875～1,015万（2台構成）</p>
+                            <p class="small text-muted mb-2">構成パターンC: 大規模病院（100人以上、24時間稼働）</p>
+                            <ul class="small">
+                                <li>本番+バックアップの2台構成</li>
+                                <li>各10TB×12、RAID 6、実効100TB</li>
+                                <li>AMD Ryzen 7 9000シリーズ、32GB DDR5</li>
+                                <li>10GbE×2、デュアル電源、冗長構成</li>
+                                <li>クラウドバックアップ（3重バックアップ）</li>
+                                <li>保守: 24h365dオンサイト5年</li>
+                            </ul>
+                            <a href="comparison.html#ts-h1277afx" class="btn btn-outline-primary btn-sm w-100 mt-2">詳細を見る</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 映像制作 -->
+    <section class="py-5 industry-section" id="video" style="display: none;">
+        <div class="container">
+            <div class="row align-items-center mb-5">
+                <div class="col-md-6">
+                    <h2 class="mb-4"><i class="fas fa-video text-primary me-3"></i>映像制作向けソリューション</h2>
+                    <h4 class="mb-3">課題</h4>
+                    <ul class="list-unstyled mb-4">
+                        <li class="mb-2"><i class="fas fa-times-circle text-danger me-2"></i>4K/8K動画の大容量ストレージ</li>
+                        <li class="mb-2"><i class="fas fa-times-circle text-danger me-2"></i>編集中の高速データアクセス</li>
+                        <li class="mb-2"><i class="fas fa-times-circle text-danger me-2"></i>複数人での同時編集</li>
+                        <li class="mb-2"><i class="fas fa-times-circle text-danger me-2"></i>プロジェクトファイルの安全な保管</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h4 class="mb-3">QNAP NASで解決</h4>
+                    <ul class="list-unstyled mb-4">
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>10GbE接続で高速転送</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>NAS上で直接編集可能</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>共有フォルダーで共同作業</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>スナップショットで編集履歴保存</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h4 class="mb-3">推奨製品</h4>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-primary">
+                        <div class="card-body">
+                            <a href="https://www.elecom.co.jp/products/T432PXUM104.html" target="_blank">
+                                <img src="images/T432PXUM104_01.jpg" alt="TS-432PXU" class="img-fluid mb-3" style="max-height: 150px; object-fit: contain; width: 100%;">
+                            </a>
+                            <h5 class="card-title">TS-432PXU + 10GbEネットワーク</h5>
+                            <p class="text-primary fw-bold">¥90万（10GbE構成込）</p>
+                            <p class="small text-muted mb-2">構成パターンA: 小規模制作会社（5～10人、～30TB）</p>
+                            <ul class="small">
+                                <li>中小規模スタジオ向け</li>
+                                <li>8TB×4、RAID 5、実効24TB</li>
+                                <li>10GbE SFP+×2で超高速転送</li>
+                                <li>4K動画編集に最適</li>
+                                <li>10GbEスイッチ、SFPモジュール、NIC含む</li>
+                                <li>メモリ増設推奨（2GB→8GB）</li>
+                                <li>保守: センドバック3年（¥8万）</li>
+                            </ul>
+                            <a href="comparison.html#ts-432pxu" class="btn btn-outline-primary btn-sm w-100 mt-2">詳細を見る</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-warning">
+                        <div class="card-body">
+                            <a href="https://www.elecom.co.jp/products/TS-H1277AFXF.html" target="_blank">
+                                <img src="images/TS-h1277AFX_01.png" alt="TS-H1277AFX" class="img-fluid mb-3" style="max-height: 150px; object-fit: contain; width: 100%;">
+                            </a>
+                            <h5 class="card-title">TS-H1277AFX MDSSD（オールフラッシュ）</h5>
+                            <p class="text-primary fw-bold">¥422万（SSD構成）</p>
+                            <p class="small text-muted mb-2">構成パターンB: 大規模制作会社（20人以上、～100TB、8K対応）</p>
+                            <ul class="small">
+                                <li>大規模スタジオ向け</li>
+                                <li>MDSSD 4TB×12、RAID 6、実効40TB</li>
+                                <li>AMD Ryzen 7 9000シリーズ 8コア</li>
+                                <li>32GB DDR5、10GBASE-T×2</li>
+                                <li>8K動画のリアルタイム編集可能</li>
+                                <li>大人数同時アクセス対応</li>
+                                <li>保守: オンサイト3年（¥47万）</li>
+                            </ul>
+                            <a href="comparison.html#ts-h1277afx" class="btn btn-outline-primary btn-sm w-100 mt-2">詳細を見る</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 設計・CAD -->
+    <section class="py-5 bg-light industry-section" id="design" style="display: none;">
+        <div class="container">
+            <div class="row align-items-center mb-5">
+                <div class="col-md-6">
+                    <h2 class="mb-4"><i class="fas fa-pencil-ruler text-primary me-3"></i>設計・CAD向けソリューション</h2>
+                    <h4 class="mb-3">課題</h4>
+                    <ul class="list-unstyled mb-4">
+                        <li class="mb-2"><i class="fas fa-times-circle text-danger me-2"></i>大容量CADファイルの保存</li>
+                        <li class="mb-2"><i class="fas fa-times-circle text-danger me-2"></i>設計データのバージョン管理</li>
+                        <li class="mb-2"><i class="fas fa-times-circle text-danger me-2"></i>複数の設計者での同時作業</li>
+                        <li class="mb-2"><i class="fas fa-times-circle text-danger me-2"></i>図面の長期保存と検索</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h4 class="mb-3">QNAP NASで解決</h4>
+                    <ul class="list-unstyled mb-4">
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>高速ネットワークで快適なアクセス</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>スナップショットで過去バージョン保存</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>ファイルロック機能で同時編集防止</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>全文検索で図面を素早く発見</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h4 class="mb-3">推奨製品</h4>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-primary">
+                        <div class="card-body">
+                            <a href="https://www.elecom.co.jp/products/T433EUM104.html" target="_blank">
+                                <img src="images/T433EUM104_01.jpg" alt="TS-433eU" class="img-fluid mb-3" style="max-height: 150px; object-fit: contain; width: 100%;">
+                            </a>
+                            <h5 class="card-title">TS-433eU WD Red</h5>
+                            <p class="text-primary fw-bold">¥31～42万</p>
+                            <p class="small text-muted mb-2">単一現場事務所（10人、～12TB）</p>
+                            <ul class="small">
+                                <li>中小規模設計事務所向け</li>
+                                <li>4TB×4、RAID 5、実効12TB</li>
+                                <li>2.5GbE×2で快適アクセス</li>
+                                <li>VPNアクセス対応</li>
+                                <li>バージョン管理機能</li>
+                                <li>保守: センドバック3年（¥6万）</li>
+                            </ul>
+                            <a href="comparison.html#ts-433eu" class="btn btn-outline-primary btn-sm w-100 mt-2">詳細を見る</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-warning">
+                        <div class="card-body">
+                            <a href="https://www.elecom.co.jp/products/T432PXUM104.html" target="_blank">
+                                <img src="images/T432PXUM104_01.jpg" alt="TS-432PXU" class="img-fluid mb-3" style="max-height: 150px; object-fit: contain; width: 100%;">
+                            </a>
+                            <h5 class="card-title">TS-432PXU + 10GbE</h5>
+                            <p class="text-primary fw-bold">¥118万（10GbE構成）</p>
+                            <p class="small text-muted mb-2">大規模設計事務所向け（BIM、大容量3D CAD対応）</p>
+                            <ul class="small">
+                                <li>大規模設計事務所向け</li>
+                                <li>10TB×4、RAID 6、実効20TB</li>
+                                <li>10GbE SFP+×2で超高速転送</li>
+                                <li>BIM、3D CADのリアルタイム編集</li>
+                                <li>複数人での同時アクセス対応</li>
+                                <li>保守: オンサイト3年（¥14万）</li>
+                            </ul>
+                            <a href="comparison.html#ts-432pxu" class="btn btn-outline-primary btn-sm w-100 mt-2">詳細を見る</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 一般企業 -->
+    <section class="py-5 industry-section" id="corporate" style="display: none;">
+        <div class="container">
+            <div class="row align-items-center mb-5">
+                <div class="col-md-6">
+                    <h2 class="mb-4"><i class="fas fa-building text-primary me-3"></i>一般企業向けソリューション</h2>
+                    <h4 class="mb-3">課題</h4>
+                    <ul class="list-unstyled mb-4">
+                        <li class="mb-2"><i class="fas fa-times-circle text-danger me-2"></i>部署間でのファイル共有が非効率</li>
+                        <li class="mb-2"><i class="fas fa-times-circle text-danger me-2"></i>重要な社内資料のバックアップ不足</li>
+                        <li class="mb-2"><i class="fas fa-times-circle text-danger me-2"></i>在宅勤務時のファイルアクセスが困難</li>
+                        <li class="mb-2"><i class="fas fa-times-circle text-danger me-2"></i>ファイルサーバーの導入コストを抑えたい</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h4 class="mb-3">QNAP NASで解決</h4>
+                    <ul class="list-unstyled mb-4">
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>共有フォルダーで部署間の情報共有を効率化</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>自動バックアップで重要データを保護</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>VPN接続でリモートワークに対応</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>低コストで高機能なファイルサーバーを実現</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h4 class="mb-3">推奨製品</h4>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-primary">
+                        <div class="card-body">
+                            <a href="https://www.elecom.co.jp/products/T233M102E.html" target="_blank">
+                                <img src="images/T233M102E_01.jpg" alt="TS-233" class="img-fluid mb-3" style="max-height: 150px; object-fit: contain; width: 100%;">
+                            </a>
+                            <h5 class="card-title">TS-233 + クラウドバックアップ</h5>
+                            <p class="text-primary fw-bold">¥11万（本体+保守）</p>
+                            <p class="small text-muted mb-2">構成パターンA: 小規模オフィス（5～10人、～5TB）</p>
+                            <ul class="small">
+                                <li>小規模オフィス向け（～5人）</li>
+                                <li>2TB×2、RAID 1、実効2TB</li>
+                                <li>低コストで導入可能</li>
+                                <li>myQNAPcloud対応（テレワーク）</li>
+                                <li>クラウドバックアップ連携</li>
+                                <li>保守: 延長保証2年（¥1万）</li>
+                            </ul>
+                            <a href="comparison.html#ts-233" class="btn btn-outline-primary btn-sm w-100 mt-2">詳細を見る</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-warning">
+                        <div class="card-body">
+                            <a href="https://www.elecom.co.jp/products/T433EUM104.html" target="_blank">
+                                <img src="images/T433EUM104_01.jpg" alt="TS-433eU" class="img-fluid mb-3" style="max-height: 150px; object-fit: contain; width: 100%;">
+                            </a>
+                            <h5 class="card-title">TS-433eU + Box連携</h5>
+                            <p class="text-primary fw-bold">¥52万（本体+保守）</p>
+                            <p class="small text-muted mb-2">構成パターンB: 中規模オフィス（20～50人、～20TB）</p>
+                            <ul class="small">
+                                <li>中規模オフィス向け（5～50人）</li>
+                                <li>8TB×4、RAID 5、実効24TB</li>
+                                <li>2.5GbE×2で高速アクセス</li>
+                                <li>Box連携でテレワーク対応</li>
+                                <li>Active Directory統合</li>
+                                <li>保守: オンサイト3年（¥10万）</li>
+                            </ul>
+                            <a href="comparison.html#ts-433eu" class="btn btn-outline-primary btn-sm w-100 mt-2">詳細を見る</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <a href="https://www.elecom.co.jp/products/TH765EUN104.html" target="_blank">
+                                <img src="images/TS-765eU_01.png" alt="TS-h765eU" class="img-fluid mb-3" style="max-height: 150px; object-fit: contain; width: 100%;">
+                            </a>
+                            <h5 class="card-title">TS-h765eU + 仮想化バックアップ</h5>
+                            <p class="text-primary fw-bold">¥99万（本体+保守）</p>
+                            <p class="small text-muted mb-2">構成パターンC: 大規模オフィス（50～100人、～50TB）</p>
+                            <ul class="small">
+                                <li>大規模オフィス向け（50～100人）</li>
+                                <li>12TB×4、RAID 6、実効24TB</li>
+                                <li>8GB RAM、高性能CPU</li>
+                                <li>VMware vSphere連携</li>
+                                <li>スナップショット、バージョン管理</li>
+                                <li>保守: オンサイト5年（¥28万）</li>
+                            </ul>
+                            <a href="comparison.html#ts-h765eu" class="btn btn-outline-primary btn-sm w-100 mt-2">詳細を見る</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 建設・工事現場 -->
+    <section class="py-5 bg-light industry-section" id="construction" style="display: none;">
+        <div class="container">
+            <div class="row align-items-center mb-5">
+                <div class="col-md-6">
+                    <h2 class="mb-4"><i class="fas fa-hard-hat text-primary me-3"></i>建設・工事現場向けソリューション</h2>
+                    <h4 class="mb-3">課題</h4>
+                    <ul class="list-unstyled mb-4">
+                        <li class="mb-2"><i class="fas fa-times-circle text-danger me-2"></i>大容量CAD図面（AutoCAD、Revit、BIM）の保管</li>
+                        <li class="mb-2"><i class="fas fa-times-circle text-danger me-2"></i>本社⇔現場間でのデータ共有</li>
+                        <li class="mb-2"><i class="fas fa-times-circle text-danger me-2"></i>工事写真・施工管理データのバージョン管理</li>
+                        <li class="mb-2"><i class="fas fa-times-circle text-danger me-2"></i>外出先からの図面アクセス</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h4 class="mb-3">QNAP NASで解決</h4>
+                    <ul class="list-unstyled mb-4">
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>2.5GbE/10GbEで大容量図面の高速転送</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>VPN経由で拠点間の安全なデータ同期</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>スナップショット機能で世代管理・復元</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Active Directory統合で認証管理</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h4 class="mb-3">推奨製品</h4>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-primary">
+                        <div class="card-body">
+                            <a href="https://www.elecom.co.jp/products/T433EUM104.html" target="_blank">
+                                <img src="images/T433EUM104_01.jpg" alt="TS-433eU" class="img-fluid mb-3" style="max-height: 150px; object-fit: contain; width: 100%;">
+                            </a>
+                            <h5 class="card-title">TS-433eU</h5>
+                            <p class="text-primary fw-bold">¥31～42万（16TB構成）</p>
+                            <ul class="small">
+                                <li>単一現場事務所（10人、～12TB）</li>
+                                <li>4TB×4、RAID 5、実効12TB</li>
+                                <li>2.5GbE×2、VPNアクセス対応</li>
+                                <li>保守: センドバック3年（¥6万）</li>
+                            </ul>
+                            <a href="comparison.html#ts-433eu" class="btn btn-outline-primary btn-sm w-100 mt-2">詳細を見る</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <a href="https://www.elecom.co.jp/products/TH765EUN104.html" target="_blank">
+                                <img src="images/TS-765eU_01.png" alt="TS-h765eU" class="img-fluid mb-3" style="max-height: 150px; object-fit: contain; width: 100%;">
+                            </a>
+                            <h5 class="card-title">TS-h765eU</h5>
+                            <p class="text-primary fw-bold">¥60～166万（本社+現場3拠点構成）</p>
+                            <ul class="small">
+                                <li>本社+複数現場（50人、～50TB）</li>
+                                <li>10TB×4、RAID 6、実効20TB</li>
+                                <li>拠点間VPN同期、承認フロー</li>
+                                <li>保守: オンサイト3年（¥17万）</li>
+                            </ul>
+                            <a href="comparison.html#ts-h765eu" class="btn btn-outline-primary btn-sm w-100 mt-2">詳細を見る</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <a href="https://www.elecom.co.jp/products/T432PXUM104.html" target="_blank">
+                                <img src="images/T432PXUM104_01.jpg" alt="TS-432PXU" class="img-fluid mb-3" style="max-height: 150px; object-fit: contain; width: 100%;">
+                            </a>
+                            <h5 class="card-title">TS-432PXU</h5>
+                            <p class="text-primary fw-bold">¥55～118万（10GbE構成）</p>
+                            <ul class="small">
+                                <li>大手ゼネコン（100人以上、BIM対応）</li>
+                                <li>10TB×4、RAID 6、実効20TB</li>
+                                <li>10GbE×2で超高速BIMデータ転送</li>
+                                <li>保守: オンサイト3年（¥14万）</li>
+                            </ul>
+                            <a href="comparison.html#ts-432pxu" class="btn btn-outline-primary btn-sm w-100 mt-2">詳細を見る</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 学校・教育 -->
+    <section class="py-5 industry-section" id="education" style="display: none;">
+        <div class="container">
+            <div class="row align-items-center mb-5">
+                <div class="col-md-6">
+                    <h2 class="mb-4"><i class="fas fa-school text-primary me-3"></i>学校・教育向けソリューション</h2>
+                    <h4 class="mb-3">課題</h4>
+                    <ul class="list-unstyled mb-4">
+                        <li class="mb-2"><i class="fas fa-times-circle text-danger me-2"></i>校務データ（成績、出欠、指導要録）の厳重管理</li>
+                        <li class="mb-2"><i class="fas fa-times-circle text-danger me-2"></i>GIGAスクール端末データの集約</li>
+                        <li class="mb-2"><i class="fas fa-times-circle text-danger me-2"></i>校務と授業データの分離（セキュリティ）</li>
+                        <li class="mb-2"><i class="fas fa-times-circle text-danger me-2"></i>予算制約（公共調達）</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h4 class="mb-3">QNAP NASで解決</h4>
+                    <ul class="list-unstyled mb-4">
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Active Directory統合で統一認証</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>共有フォルダーでGIGA端末からアクセス</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>NAS分離で校務と授業を完全分離</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>コストパフォーマンスに優れた構成</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h4 class="mb-3">推奨製品</h4>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-primary">
+                        <div class="card-body">
+                            <a href="https://www.elecom.co.jp/products/T433EUM104.html" target="_blank">
+                                <img src="images/T433EUM104_01.jpg" alt="TS-433eU" class="img-fluid mb-3" style="max-height: 150px; object-fit: contain; width: 100%;">
+                            </a>
+                            <h5 class="card-title">TS-433eU×2台構成</h5>
+                            <p class="text-primary fw-bold">¥63万+保守¥16万＝¥79万</p>
+                            <ul class="small">
+                                <li>小中学校（教職員30人、児童生徒500人）</li>
+                                <li>校務用・授業用でNAS分離</li>
+                                <li>各16TB（4TB×4、RAID 5、実効12TB）</li>
+                                <li>保守: 校務オンサイト3年、授業センドバック3年</li>
+                            </ul>
+                            <a href="comparison.html#ts-433eu" class="btn btn-outline-primary btn-sm w-100 mt-2">詳細を見る</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <a href="https://www.elecom.co.jp/products/TH765EUN104.html" target="_blank">
+                                <img src="images/TS-765eU_01.png" alt="TS-h765eU" class="img-fluid mb-3" style="max-height: 150px; object-fit: contain; width: 100%;">
+                            </a>
+                            <h5 class="card-title">TS-h765eU×3台構成</h5>
+                            <p class="text-primary fw-bold">¥185万+保守¥51万＝¥236万</p>
+                            <ul class="small">
+                                <li>高校・大学（教職員100人、学生2,000人）</li>
+                                <li>校務用・授業用・バックアップ3台構成</li>
+                                <li>各40TB（10TB×4、RAID 6、実効20TB）</li>
+                                <li>保守: 校務オンサイト5年、授業オンサイト3年</li>
+                            </ul>
+                            <a href="comparison.html#ts-h765eu" class="btn btn-outline-primary btn-sm w-100 mt-2">詳細を見る</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 官公庁・自治体 -->
+    <section class="py-5 bg-light industry-section" id="government" style="display: none;">
+        <div class="container">
+            <div class="row align-items-center mb-5">
+                <div class="col-md-6">
+                    <h2 class="mb-4"><i class="fas fa-landmark text-primary me-3"></i>官公庁・自治体向けソリューション</h2>
+                    <h4 class="mb-3">課題</h4>
+                    <ul class="list-unstyled mb-4">
+                        <li class="mb-2"><i class="fas fa-times-circle text-danger me-2"></i>行政文書・公文書の長期保存（公文書管理法）</li>
+                        <li class="mb-2"><i class="fas fa-times-circle text-danger me-2"></i>住民情報・台帳データの高セキュリティ管理</li>
+                        <li class="mb-2"><i class="fas fa-times-circle text-danger me-2"></i>BCP対策（災害時の業務継続）</li>
+                        <li class="mb-2"><i class="fas fa-times-circle text-danger me-2"></i>予算制約（公共調達）</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h4 class="mb-3">QNAP NASで解決</h4>
+                    <ul class="list-unstyled mb-4">
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>ニアラインHDD（5年保証）で長期保存対応</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>暗号化・アクセス権限で情報保護</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>遠隔地バックアップでBCP対策</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>全文検索で情報公開請求に迅速対応</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h4 class="mb-3">推奨製品</h4>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card h-100 border-primary">
+                        <div class="card-body">
+                            <a href="https://www.elecom.co.jp/products/TH765EUN104.html" target="_blank">
+                                <img src="images/TS-765eU_01.png" alt="TS-h765eU" class="img-fluid mb-3" style="max-height: 150px; object-fit: contain; width: 100%;">
+                            </a>
+                            <h5 class="card-title">TS-h765eU ニアライン×2台</h5>
+                            <p class="text-primary fw-bold">¥147万+保守¥45万＝¥192万</p>
+                            <ul class="small">
+                                <li>市区町村役場（職員100人、～50TB）</li>
+                                <li>本庁+遠隔地バックアップの2拠点構成</li>
+                                <li>各48TB（12TB×4、RAID 6、実効24TB）</li>
+                                <li>ニアラインHDD（5年保証、長期保存）</li>
+                                <li>保守: 本庁オンサイト5年、遠隔センドバック5年</li>
+                            </ul>
+                            <a href="comparison.html#ts-h765eu" class="btn btn-outline-primary btn-sm w-100 mt-2">詳細を見る</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 流通・販売 -->
+    <section class="py-5 industry-section" id="retail" style="display: none;">
+        <div class="container">
+            <div class="row align-items-center mb-5">
+                <div class="col-md-6">
+                    <h2 class="mb-4"><i class="fas fa-shopping-cart text-primary me-3"></i>流通・販売向けソリューション</h2>
+                    <h4 class="mb-3">課題</h4>
+                    <ul class="list-unstyled mb-4">
+                        <li class="mb-2"><i class="fas fa-times-circle text-danger me-2"></i>複数店舗のPOS・販売データの集約</li>
+                        <li class="mb-2"><i class="fas fa-times-circle text-danger me-2"></i>リアルタイム在庫管理の必要性</li>
+                        <li class="mb-2"><i class="fas fa-times-circle text-danger me-2"></i>顧客情報（CRM）の一元管理</li>
+                        <li class="mb-2"><i class="fas fa-times-circle text-danger me-2"></i>営業時間中の安定稼働</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h4 class="mb-3">QNAP NASで解決</h4>
+                    <ul class="list-unstyled mb-4">
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>本部で全店舗データを一元管理</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>夜間自動同期でリアルタイム在庫把握</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>アクセス権限で情報保護</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>RAID構成で安定稼働を実現</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h4 class="mb-3">推奨製品</h4>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card h-100 border-primary">
+                        <div class="card-body">
+                            <a href="https://www.elecom.co.jp/products/TH765EUN104.html" target="_blank">
+                                <img src="images/TS-765eU_01.png" alt="TS-h765eU" class="img-fluid mb-3" style="max-height: 150px; object-fit: contain; width: 100%;">
+                            </a>
+                            <h5 class="card-title">本部: TS-h765eU + 店舗: TS-233×5</h5>
+                            <p class="text-primary fw-bold">¥102万+保守¥21万＝¥123万</p>
+                            <ul class="small">
+                                <li>小売チェーン（本部+店舗5店、～30TB）</li>
+                                <li>本部: 32TB（8TB×4、RAID 6、実効16TB）</li>
+                                <li>各店舗: 4TB（2TB×2、RAID 1、実効2TB）</li>
+                                <li>夜間自動同期、在庫リアルタイム把握</li>
+                                <li>保守: 本部オンサイト3年、店舗延長保証2年</li>
+                            </ul>
+                            <a href="comparison.html#ts-h765eu" class="btn btn-outline-primary btn-sm w-100 mt-2">詳細を見る</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 監視カメラ・セキュリティ -->
+    <section class="py-5 bg-light industry-section" id="surveillance" style="display: none;">
+        <div class="container">
+            <div class="row align-items-center mb-5">
+                <div class="col-md-6">
+                    <h2 class="mb-4"><i class="fas fa-video text-primary me-3"></i>監視カメラ・セキュリティ向けソリューション</h2>
+                    <h4 class="mb-3">課題</h4>
+                    <ul class="list-unstyled mb-4">
+                        <li class="mb-2"><i class="fas fa-times-circle text-danger me-2"></i>24時間連続書き込みに対応したストレージ</li>
+                        <li class="mb-2"><i class="fas fa-times-circle text-danger me-2"></i>録画映像の長期保存（30日以上）</li>
+                        <li class="mb-2"><i class="fas fa-times-circle text-danger me-2"></i>複数カメラの同時録画・再生</li>
+                        <li class="mb-2"><i class="fas fa-times-circle text-danger me-2"></i>AIイベント検知・顔認証機能</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h4 class="mb-3">QNAP NASで解決</h4>
+                    <ul class="list-unstyled mb-4">
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>WD Purple（監視カメラ専用HDD、180万時間MTBF）</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>QVR Pro（NVR機能）で最大64chまで対応</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>24時間連続書き込み対応</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>AIイベント検知、顔認識機能標準搭載</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h4 class="mb-3">推奨製品</h4>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card h-100 border-primary">
+                        <div class="card-body">
+                            <a href="https://www.elecom.co.jp/products/TH765EUN104.html" target="_blank">
+                                <img src="images/TS-765eU_01.png" alt="TS-h765eU" class="img-fluid mb-3" style="max-height: 150px; object-fit: contain; width: 100%;">
+                            </a>
+                            <h5 class="card-title">TS-h765eU WD Purple構成</h5>
+                            <p class="text-primary fw-bold">¥45～50万+保守¥17万＝¥62～67万</p>
+                            <ul class="small">
+                                <li>監視カメラ16台（録画30日、～12TB）</li>
+                                <li>WD Purple 4TB×4、RAID 5、実効12TB</li>
+                                <li>監視カメラ専用HDD（180万時間MTBF）</li>
+                                <li>QVR Pro ライセンス（16ch対応）</li>
+                                <li>AIイベント検知、顔認識機能</li>
+                                <li>保守: センドバック5年（¥17万）</li>
+                            </ul>
+                            <a href="comparison.html#ts-h765eu" class="btn btn-outline-primary btn-sm w-100 mt-2">詳細を見る</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTAセクション -->
+    <section class="py-5 bg-primary text-white">
+        <div class="container text-center">
+            <h2 class="mb-4">お客様の業種に最適なソリューションをご提案</h2>
+            <p class="lead mb-4">詳しい導入事例や構成のご相談は、お気軽にお問い合わせください</p>
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+                <a href="cases.html" class="btn btn-light btn-lg px-5">
+                    <i class="fas fa-book me-2"></i>導入事例を見る
+                </a>
+                <a href="estimate.html" class="btn btn-outline-light btn-lg px-5">
+                    <i class="fas fa-calculator me-2"></i>見積もり作成
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>QNAP NAS ソリューション提案サイト</h5>
+                    <p class="text-muted">エレコム取扱いQNAP製品の提案をサポートします</p>
+                </div>
+                <div class="col-md-3">
+                    <h6>サイトマップ</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white-50 text-decoration-none">ホーム</a></li>
+                        <li><a href="selection.html" class="text-white-50 text-decoration-none">製品選定</a></li>
+                        <li><a href="comparison.html" class="text-white-50 text-decoration-none">製品比較</a></li>
+                        <li><a href="solutions.html" class="text-white-50 text-decoration-none">業種別ソリューション</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h6>その他</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="estimate.html" class="text-white-50 text-decoration-none">見積もり作成</a></li>
+                        <li><a href="cases.html" class="text-white-50 text-decoration-none">導入事例</a></li>
+                        <li><a href="technical.html" class="text-white-50 text-decoration-none">技術資料</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="border-secondary">
+            <div class="text-center text-muted">
+                <p class="mb-0">&copy; 2025 QNAP NAS Solution. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function showIndustry(industry) {
+            // 全セクションを非表示
+            document.querySelectorAll('.industry-section').forEach(section => {
+                section.style.display = 'none';
+            });
+            
+            // 選択されたセクションを表示
+            document.getElementById(industry).style.display = 'block';
+            
+            // スムーズスクロール
+            document.getElementById(industry).scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        // ページ読み込み時に製造業を表示
+        document.addEventListener('DOMContentLoaded', function() {
+            showIndustry('manufacturing');
+        });
+    </script>
+</body>
+</html>

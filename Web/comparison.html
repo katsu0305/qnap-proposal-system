@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>製品比較表 - QNAP NAS ソリューション</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- ヘッダー -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="fas fa-server me-2"></i>QNAP NAS ソリューション
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">ホーム</a></li>
+                    <li class="nav-item"><a class="nav-link" href="selection.html">製品選定</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="comparison.html">製品比較</a></li>
+                    <li class="nav-item"><a class="nav-link" href="solutions.html">業種別ソリューション</a></li>
+                    <li class="nav-item"><a class="nav-link" href="estimate.html">見積もり作成</a></li>
+                    <li class="nav-item"><a class="nav-link" href="cases.html">導入事例</a></li>
+                    <li class="nav-item"><a class="nav-link" href="technical.html">技術資料</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ヘッダーセクション -->
+    <section class="bg-primary text-white py-5">
+        <div class="container text-center">
+            <h1 class="display-4 fw-bold mb-3">製品比較表</h1>
+            <p class="lead">QNAP NAS全機種のスペックを比較</p>
+        </div>
+    </section>
+
+    <!-- フィルターセクション -->
+    <section class="py-4 bg-light">
+        <div class="container">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="mb-3"><i class="fas fa-filter me-2"></i>フィルター</h5>
+                    <div class="row g-3">
+                        <div class="col-md-3">
+                            <label class="form-label">価格帯</label>
+                            <select class="form-select" id="filterPrice">
+                                <option value="">全て</option>
+                                <option value="0-30">～30万円</option>
+                                <option value="30-80">30～80万円</option>
+                                <option value="80-300">80～300万円</option>
+                                <option value="300+">300万円以上</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <label class="form-label">ベイ数</label>
+                            <select class="form-select" id="filterBays">
+                                <option value="">全て</option>
+                                <option value="2">2ベイ</option>
+                                <option value="4">4ベイ</option>
+                                <option value="12">12ベイ</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <label class="form-label">ネットワーク</label>
+                            <select class="form-select" id="filterNetwork">
+                                <option value="">全て</option>
+                                <option value="1GbE">1GbE</option>
+                                <option value="2.5GbE">2.5GbE</option>
+                                <option value="10GbE">10GbE</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <label class="form-label">形状</label>
+                            <select class="form-select" id="filterForm">
+                                <option value="">全て</option>
+                                <option value="tower">タワー型</option>
+                                <option value="rack">ラックマウント</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="mt-3">
+                        <button class="btn btn-primary" onclick="applyFilters()">
+                            <i class="fas fa-check me-2"></i>フィルター適用
+                        </button>
+                        <button class="btn btn-outline-secondary" onclick="clearFilters()">
+                            <i class="fas fa-times me-2"></i>クリア
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 比較表 -->
+    <section class="py-5">
+        <div class="container">
+            <div class="table-responsive">
+                <table class="table table-hover table-bordered align-middle" id="comparisonTable">
+                    <thead class="table-primary">
+                        <tr>
+                            <th>項目</th>
+                            <th id="ts-233">
+                                <a href="https://www.elecom.co.jp/products/T233M102E.html" target="_blank" class="text-decoration-none">
+                                    <img src="images/T233M102E_01.jpg" alt="TS-233" class="img-fluid mb-2" style="max-height: 80px; object-fit: contain;">
+                                </a>
+                                <div>TS-233</div>
+                            </th>
+                            <th id="ts-433eu">
+                                <a href="https://www.elecom.co.jp/products/T433EUM104.html" target="_blank" class="text-decoration-none">
+                                    <img src="images/T433EUM104_01.jpg" alt="TS-433eU" class="img-fluid mb-2" style="max-height: 80px; object-fit: contain;">
+                                </a>
+                                <div>TS-433eU</div>
+                            </th>
+                            <th id="ts-h765eu">
+                                <a href="https://www.elecom.co.jp/products/TH765EUN104.html" target="_blank" class="text-decoration-none">
+                                    <img src="images/TS-765eU_01.png" alt="TS-h765eU" class="img-fluid mb-2" style="max-height: 80px; object-fit: contain;">
+                                </a>
+                                <div>TS-h765eU</div>
+                            </th>
+                            <th id="ts-432pxu">
+                                <a href="https://www.elecom.co.jp/products/T432PXUM104.html" target="_blank" class="text-decoration-none">
+                                    <img src="images/T432PXUM104_01.jpg" alt="TS-432PXU" class="img-fluid mb-2" style="max-height: 80px; object-fit: contain;">
+                                </a>
+                                <div>TS-432PXU</div>
+                            </th>
+                            <th id="ts-h1277afx">
+                                <a href="https://www.elecom.co.jp/products/TS-H1277AFXF.html" target="_blank" class="text-decoration-none">
+                                    <img src="images/TS-h1277AFX_01.png" alt="TS-H1277AFX" class="img-fluid mb-2" style="max-height: 80px; object-fit: contain;">
+                                </a>
+                                <div>TS-H1277AFX</div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="fw-bold bg-light">価格帯</td>
+                            <td>¥9万～</td>
+                            <td>¥23～62万</td>
+                            <td>¥31～97万</td>
+                            <td>¥26～66万</td>
+                            <td>¥300万～</td>
+                        </tr>
+                        <tr>
+                            <td class="fw-bold bg-light">形状</td>
+                            <td><span class="badge bg-info">タワー</span></td>
+                            <td><span class="badge bg-warning">ラック1U</span></td>
+                            <td><span class="badge bg-warning">ラック1U</span></td>
+                            <td><span class="badge bg-warning">ラック1U</span></td>
+                            <td><span class="badge bg-info">タワー</span></td>
+                        </tr>
+                        <tr>
+                            <td class="fw-bold bg-light">ベイ数</td>
+                            <td>2ベイ</td>
+                            <td>4ベイ</td>
+                            <td>4ベイ</td>
+                            <td>4ベイ</td>
+                            <td>12ベイ</td>
+                        </tr>
+                        <tr>
+                            <td class="fw-bold bg-light">CPU</td>
+                            <td>A55 クアッド</td>
+                            <td>A55 クアッド</td>
+                            <td>高性能</td>
+                            <td>Alpine デュアル</td>
+                            <td>Ryzen 7 8コア</td>
+                        </tr>
+                        <tr>
+                            <td class="fw-bold bg-light">RAM</td>
+                            <td>2GB</td>
+                            <td>4GB</td>
+                            <td>8GB</td>
+                            <td>2GB（拡張可）</td>
+                            <td>32GB（拡張可）</td>
+                        </tr>
+                        <tr>
+                            <td class="fw-bold bg-light">ネットワーク</td>
+                            <td>1GbE×1</td>
+                            <td>2.5GbE×2</td>
+                            <td>2.5GbE×2</td>
+                            <td>10GbE SFP+×2</td>
+                            <td>10GBASE-T×2</td>
+                        </tr>
+                        <tr>
+                            <td class="fw-bold bg-light">最大速度</td>
+                            <td>112 MB/s</td>
+                            <td>280 MB/s</td>
+                            <td>280 MB/s</td>
+                            <td>1,200 MB/s</td>
+                            <td>1,200 MB/s</td>
+                        </tr>
+                        <tr>
+                            <td class="fw-bold bg-light">RAID</td>
+                            <td>0, 1</td>
+                            <td>0, 1, 5, 6, 10</td>
+                            <td>0, 1, 5, 6, 10</td>
+                            <td>0, 1, 5, 6, 10</td>
+                            <td>0, 1, 5, 6, 10</td>
+                        </tr>
+                        <tr>
+                            <td class="fw-bold bg-light">ホットスワップ</td>
+                            <td><i class="fas fa-times text-danger"></i></td>
+                            <td><i class="fas fa-check text-success"></i></td>
+                            <td><i class="fas fa-check text-success"></i></td>
+                            <td><i class="fas fa-check text-success"></i></td>
+                            <td><i class="fas fa-check text-success"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="fw-bold bg-light">PCIe拡張</td>
+                            <td><i class="fas fa-times text-danger"></i></td>
+                            <td><i class="fas fa-times text-danger"></i></td>
+                            <td><i class="fas fa-times text-danger"></i></td>
+                            <td><i class="fas fa-times text-danger"></i></td>
+                            <td><i class="fas fa-check text-success"></i> ×3</td>
+                        </tr>
+                        <tr>
+                            <td class="fw-bold bg-light">想定ユーザー</td>
+                            <td>～5人</td>
+                            <td>5～50人</td>
+                            <td>20～50人</td>
+                            <td>20～50人</td>
+                            <td>50人以上</td>
+                        </tr>
+                        <tr>
+                            <td class="fw-bold bg-light">主な用途</td>
+                            <td>小規模オフィス</td>
+                            <td>中小企業</td>
+                            <td>医療・製造</td>
+                            <td>動画編集・CAD</td>
+                            <td>大規模企業</td>
+                        </tr>
+                        <tr>
+                            <td class="fw-bold bg-light">詳細</td>
+                            <td><a href="#ts-233-detail" class="btn btn-sm btn-outline-primary">詳細を見る</a></td>
+                            <td><a href="#ts-433eu-detail" class="btn btn-sm btn-outline-primary">詳細を見る</a></td>
+                            <td><a href="#ts-h765eu-detail" class="btn btn-sm btn-outline-primary">詳細を見る</a></td>
+                            <td><a href="#ts-432pxu-detail" class="btn btn-sm btn-outline-primary">詳細を見る</a></td>
+                            <td><a href="#ts-h1277afx-detail" class="btn btn-sm btn-outline-primary">詳細を見る</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- 用途別おすすめ -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">用途別おすすめ製品</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-folder-open text-primary me-2"></i>ファイル共有</h5>
+                            <p class="card-text">一般的なオフィスでのファイル共有に最適</p>
+                            <hr>
+                            <p class="fw-bold mb-1">推奨: TS-433eU</p>
+                            <p class="text-muted small">2.5GbE、コストパフォーマンス良好</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-video text-danger me-2"></i>動画編集</h5>
+                            <p class="card-text">4K/8K動画の高速転送に対応</p>
+                            <hr>
+                            <p class="fw-bold mb-1">推奨: TS-432PXU</p>
+                            <p class="text-muted small">10GbE対応、SSD構成も可能</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-heartbeat text-danger me-2"></i>医療機関</h5>
+                            <p class="card-text">カルテ・画像データの長期保存</p>
+                            <hr>
+                            <p class="fw-bold mb-1">推奨: TS-h765eU</p>
+                            <p class="text-muted small">ニアラインHDD、RAID 6推奨</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-industry text-warning me-2"></i>製造業</h5>
+                            <p class="card-text">24時間稼働、CADデータ管理</p>
+                            <hr>
+                            <p class="fw-bold mb-1">推奨: TS-H1277AFX</p>
+                            <p class="text-muted small">エンタープライズHDD、最高性能</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-school text-info me-2"></i>教育機関</h5>
+                            <p class="card-text">コスト重視、大容量データ</p>
+                            <hr>
+                            <p class="fw-bold mb-1">推奨: TS-433eU</p>
+                            <p class="text-muted small">コストパフォーマンス、AD統合可</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-camera text-success me-2"></i>監視カメラ</h5>
+                            <p class="card-text">24時間録画、大容量保存</p>
+                            <hr>
+                            <p class="fw-bold mb-1">推奨: TS-h765eU</p>
+                            <p class="text-muted small">WD Purple HDD、QVR Pro対応</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="text-center text-muted">
+                <p class="mb-0">&copy; 2025 QNAP NAS Solution. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/comparison.js"></script>
+</body>
+</html>

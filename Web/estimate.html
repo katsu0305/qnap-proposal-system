@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>見積もり作成 - QNAP NAS ソリューション</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- ヘッダー -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="fas fa-server me-2"></i>QNAP NAS ソリューション
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">ホーム</a></li>
+                    <li class="nav-item"><a class="nav-link" href="selection.html">製品選定</a></li>
+                    <li class="nav-item"><a class="nav-link" href="comparison.html">製品比較</a></li>
+                    <li class="nav-item"><a class="nav-link" href="solutions.html">業種別ソリューション</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="estimate.html">見積もり作成</a></li>
+                    <li class="nav-item"><a class="nav-link" href="cases.html">導入事例</a></li>
+                    <li class="nav-item"><a class="nav-link" href="technical.html">技術資料</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ヘッダーセクション -->
+    <section class="bg-primary text-white py-5">
+        <div class="container text-center">
+            <h1 class="display-4 fw-bold mb-3">見積もり作成</h1>
+            <p class="lead">必要な構成を選択して、その場で見積もりを作成</p>
+        </div>
+    </section>
+
+    <!-- 見積もりフォーム -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <!-- 製品選択 -->
+                    <div class="card shadow-sm mb-4">
+                        <div class="card-header bg-primary text-white">
+                            <h5 class="mb-0"><i class="fas fa-server me-2"></i>1. 製品選択</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <label class="form-label fw-bold">NAS本体</label>
+                                <select class="form-select" id="nasModel" onchange="updateEstimate()">
+                                    <option value="">製品を選択してください</option>
+                                    <option value="ts233" data-price="90000">TS-233 (¥90,000)</option>
+                                    <option value="ts433eu-4tb" data-price="230000">TS-433eU 4TB構成 (¥230,000)</option>
+                                    <option value="ts433eu-16tb" data-price="400000">TS-433eU 16TB構成 (¥400,000)</option>
+                                    <option value="ts433eu-40tb" data-price="620000">TS-433eU 40TB構成 (¥620,000)</option>
+                                    <option value="tsh765eu-4tb" data-price="310000">TS-h765eU 4TB構成 (¥310,000)</option>
+                                    <option value="tsh765eu-16tb" data-price="560000">TS-h765eU 16TB構成 (¥560,000)</option>
+                                    <option value="tsh765eu-40tb" data-price="970000">TS-h765eU 40TB構成 (¥970,000)</option>
+                                    <option value="ts432pxu-4tb" data-price="260000">TS-432PXU 4TB構成 (¥260,000)</option>
+                                    <option value="ts432pxu-16tb" data-price="430000">TS-432PXU 16TB構成 (¥430,000)</option>
+                                    <option value="ts432pxu-40tb" data-price="660000">TS-432PXU 40TB構成 (¥660,000)</option>
+                                    <option value="tsh1277afx" data-price="3000000">TS-H1277AFX (¥3,000,000～)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 保守サービス -->
+                    <div class="card shadow-sm mb-4">
+                        <div class="card-header bg-success text-white">
+                            <h5 class="mb-0"><i class="fas fa-shield-alt me-2"></i>2. 保守サービス</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <label class="form-label fw-bold">保守プラン</label>
+                                <select class="form-select" id="maintenance" onchange="updateEstimate()">
+                                    <option value="standard" data-price="0">標準保証3年（無料）</option>
+                                    <option value="extended5" data-price="50000">5年延長保証 (+¥50,000/年)</option>
+                                    <option value="sendback" data-price="80000">センドバック保守5年 (+¥80,000/年)</option>
+                                    <option value="onsite" data-price="150000">オンサイト保守5年 (+¥150,000/年)</option>
+                                    <option value="premium" data-price="300000">24h365d保守5年 (+¥300,000/年)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 導入支援 -->
+                    <div class="card shadow-sm mb-4">
+                        <div class="card-header bg-warning text-dark">
+                            <h5 class="mb-0"><i class="fas fa-tools me-2"></i>3. 導入支援サービス</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="initialSetup" data-price="50000" onchange="updateEstimate()">
+                                <label class="form-check-label" for="initialSetup">
+                                    初期設定作業 (+¥50,000)
+                                </label>
+                            </div>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="dataMigration" data-price="100000" onchange="updateEstimate()">
+                                <label class="form-check-label" for="dataMigration">
+                                    データ移行支援 (+¥100,000)
+                                </label>
+                            </div>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="userTraining" data-price="80000" onchange="updateEstimate()">
+                                <label class="form-check-label" for="userTraining">
+                                    ユーザー教育 (+¥80,000)
+                                </label>
+                            </div>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="networkSetup" data-price="60000" onchange="updateEstimate()">
+                                <label class="form-check-label" for="networkSetup">
+                                    ネットワーク設定 (+¥60,000)
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 周辺機器 -->
+                    <div class="card shadow-sm mb-4">
+                        <div class="card-header bg-info text-white">
+                            <h5 class="mb-0"><i class="fas fa-plug me-2"></i>4. 周辺機器</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="ups" data-price="45000" onchange="updateEstimate()">
+                                <label class="form-check-label" for="ups">
+                                    UPS（無停電電源装置） (+¥45,000)
+                                </label>
+                            </div>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="rackMount" data-price="15000" onchange="updateEstimate()">
+                                <label class="form-check-label" for="rackMount">
+                                    ラックマウント金具 (+¥15,000)
+                                </label>
+                            </div>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="switch25g" data-price="80000" onchange="updateEstimate()">
+                                <label class="form-check-label" for="switch25g">
+                                    2.5GbEスイッチ 8ポート (+¥80,000)
+                                </label>
+                            </div>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="switch10g" data-price="250000" onchange="updateEstimate()">
+                                <label class="form-check-label" for="switch10g">
+                                    10GbEスイッチ 8ポート (+¥250,000)
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 見積もりサマリー -->
+                <div class="col-lg-4">
+                    <div class="card shadow sticky-top" style="top: 100px;">
+                        <div class="card-header bg-dark text-white">
+                            <h5 class="mb-0"><i class="fas fa-calculator me-2"></i>見積もりサマリー</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span>製品本体:</span>
+                                    <span id="productPrice" class="fw-bold">¥0</span>
+                                </div>
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span>保守サービス:</span>
+                                    <span id="maintenancePrice" class="fw-bold">¥0</span>
+                                </div>
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span>導入支援:</span>
+                                    <span id="setupPrice" class="fw-bold">¥0</span>
+                                </div>
+                                <div class="d-flex justify-content-between mb-3">
+                                    <span>周辺機器:</span>
+                                    <span id="accessoriesPrice" class="fw-bold">¥0</span>
+                                </div>
+                                <hr>
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="fw-bold">小計:</span>
+                                    <span id="subtotal" class="fw-bold">¥0</span>
+                                </div>
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span>消費税(10%):</span>
+                                    <span id="tax" class="fw-bold">¥0</span>
+                                </div>
+                                <hr class="border-dark">
+                                <div class="d-flex justify-content-between">
+                                    <span class="h5 mb-0">合計:</span>
+                                    <span id="total" class="h4 text-primary mb-0">¥0</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary w-100 mb-2" onclick="printEstimate()">
+                                <i class="fas fa-print me-2"></i>見積書を印刷
+                            </button>
+                            <button class="btn btn-outline-primary w-100" onclick="downloadEstimate()">
+                                <i class="fas fa-download me-2"></i>PDFダウンロード
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 注意事項 -->
+                    <div class="card shadow mt-4">
+                        <div class="card-body">
+                            <h6 class="card-title"><i class="fas fa-info-circle me-2"></i>ご注意</h6>
+                            <ul class="small mb-0">
+                                <li>表示価格は税別です</li>
+                                <li>実際の価格は構成により変動します</li>
+                                <li>正式なお見積もりは別途ご提示いたします</li>
+                                <li>設置・配送費用は別途お見積もり</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>QNAP NAS ソリューション提案サイト</h5>
+                    <p class="text-muted">エレコム取扱いQNAP製品の提案をサポートします</p>
+                </div>
+                <div class="col-md-3">
+                    <h6>サイトマップ</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white-50 text-decoration-none">ホーム</a></li>
+                        <li><a href="selection.html" class="text-white-50 text-decoration-none">製品選定</a></li>
+                        <li><a href="comparison.html" class="text-white-50 text-decoration-none">製品比較</a></li>
+                        <li><a href="solutions.html" class="text-white-50 text-decoration-none">業種別ソリューション</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h6>その他</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="estimate.html" class="text-white-50 text-decoration-none">見積もり作成</a></li>
+                        <li><a href="cases.html" class="text-white-50 text-decoration-none">導入事例</a></li>
+                        <li><a href="technical.html" class="text-white-50 text-decoration-none">技術資料</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="border-secondary">
+            <div class="text-center text-muted">
+                <p class="mb-0">&copy; 2025 QNAP NAS Solution. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function updateEstimate() {
+            let productPrice = 0;
+            let maintenancePrice = 0;
+            let setupPrice = 0;
+            let accessoriesPrice = 0;
+
+            // 製品価格
+            const nasModel = document.getElementById('nasModel');
+            if (nasModel.value) {
+                productPrice = parseInt(nasModel.options[nasModel.selectedIndex].dataset.price);
+            }
+
+            // 保守サービス
+            const maintenance = document.getElementById('maintenance');
+            maintenancePrice = parseInt(maintenance.options[maintenance.selectedIndex].dataset.price);
+
+            // 導入支援
+            const setupCheckboxes = ['initialSetup', 'dataMigration', 'userTraining', 'networkSetup'];
+            setupCheckboxes.forEach(id => {
+                const checkbox = document.getElementById(id);
+                if (checkbox.checked) {
+                    setupPrice += parseInt(checkbox.dataset.price);
+                }
+            });
+
+            // 周辺機器
+            const accessoryCheckboxes = ['ups', 'rackMount', 'switch25g', 'switch10g'];
+            accessoryCheckboxes.forEach(id => {
+                const checkbox = document.getElementById(id);
+                if (checkbox.checked) {
+                    accessoriesPrice += parseInt(checkbox.dataset.price);
+                }
+            });
+
+            // 小計・税込計算
+            const subtotal = productPrice + maintenancePrice + setupPrice + accessoriesPrice;
+            const tax = Math.floor(subtotal * 0.1);
+            const total = subtotal + tax;
+
+            // 表示更新
+            document.getElementById('productPrice').textContent = '¥' + productPrice.toLocaleString();
+            document.getElementById('maintenancePrice').textContent = '¥' + maintenancePrice.toLocaleString();
+            document.getElementById('setupPrice').textContent = '¥' + setupPrice.toLocaleString();
+            document.getElementById('accessoriesPrice').textContent = '¥' + accessoriesPrice.toLocaleString();
+            document.getElementById('subtotal').textContent = '¥' + subtotal.toLocaleString();
+            document.getElementById('tax').textContent = '¥' + tax.toLocaleString();
+            document.getElementById('total').textContent = '¥' + total.toLocaleString();
+        }
+
+        function printEstimate() {
+            window.print();
+        }
+
+        function downloadEstimate() {
+            alert('PDF出力機能は開発中です。\n現在は印刷機能をご利用ください。');
+        }
+
+        // 診断結果から自動的にフォームに反映
+        function loadSelectionResult() {
+            try {
+                const savedProduct = localStorage.getItem('selectedProduct');
+                if (savedProduct) {
+                    const product = JSON.parse(savedProduct);
+                    console.log('診断結果を読み込みました:', product);
+                    
+                    // 製品モデルを選択
+                    const nasModel = document.getElementById('nasModel');
+                    let selectedValue = '';
+                    
+                    // モデル名から適切なオプションを選択
+                    if (product.model === 'TS-233') {
+                        selectedValue = 'ts233';
+                    } else if (product.model === 'TS-433eU') {
+                        // 容量から適切な構成を選択
+                        const capacity = parseInt(product.capacity);
+                        if (capacity <= 8) {
+                            selectedValue = 'ts433eu-4tb';
+                        } else if (capacity <= 24) {
+                            selectedValue = 'ts433eu-16tb';
+                        } else {
+                            selectedValue = 'ts433eu-40tb';
+                        }
+                    } else if (product.model === 'TS-h765eU') {
+                        const capacity = parseInt(product.capacity);
+                        if (capacity <= 8) {
+                            selectedValue = 'tsh765eu-4tb';
+                        } else if (capacity <= 32) {
+                            selectedValue = 'tsh765eu-16tb';
+                        } else {
+                            selectedValue = 'tsh765eu-40tb';
+                        }
+                    } else if (product.model === 'TS-432PXU') {
+                        const capacity = parseInt(product.capacity);
+                        if (capacity <= 8) {
+                            selectedValue = 'ts432pxu-4tb';
+                        } else if (capacity <= 24) {
+                            selectedValue = 'ts432pxu-16tb';
+                        } else {
+                            selectedValue = 'ts432pxu-40tb';
+                        }
+                    } else if (product.model === 'TS-H1277AFX') {
+                        selectedValue = 'tsh1277afx';
+                    }
+                    
+                    if (selectedValue) {
+                        nasModel.value = selectedValue;
+                    }
+                    
+                    // 保守サービスを選択（メンテナンス価格から判断）
+                    const maintenance = document.getElementById('maintenance');
+                    const maintenancePrice = parseInt(product.maintenancePrice.replace(/[^0-9]/g, ''));
+                    
+                    if (maintenancePrice === 0) {
+                        maintenance.value = 'standard';
+                    } else if (maintenancePrice < 100000) {
+                        maintenance.value = 'extended5';
+                    } else if (maintenancePrice < 150000) {
+                        maintenance.value = 'sendback';
+                    } else if (maintenancePrice < 250000) {
+                        maintenance.value = 'onsite';
+                    } else {
+                        maintenance.value = 'premium';
+                    }
+                    
+                    // 推奨事項からオプションを自動選択
+                    if (product.additionalNotes) {
+                        product.additionalNotes.forEach(note => {
+                            // UPS推奨がある場合
+                            if (note.includes('UPS') || note.includes('無停電電源')) {
+                                document.getElementById('ups').checked = true;
+                            }
+                            // クラウドバックアップ推奨がある場合
+                            if (note.includes('クラウド')) {
+                                // クラウド連携は標準機能なので特に何もしない
+                            }
+                            // データ移行が必要そうな場合
+                            if (note.includes('データ移行') || note.includes('バックアップ')) {
+                                document.getElementById('dataMigration').checked = true;
+                            }
+                        });
+                    }
+                    
+                    // 見積もりを更新
+                    updateEstimate();
+                    
+                    // 診断結果の表示用アラート（オプション）
+                    const message = `診断結果を反映しました\n\n製品: ${product.name}\n構成: ${product.capacity}\n保守: ${product.maintenance}`;
+                    
+                    // アラートの代わりに画面上部に通知バナーを表示
+                    showNotification(message);
+                }
+            } catch (e) {
+                console.error('診断結果の読み込みに失敗しました:', e);
+            }
+        }
+        
+        // 通知バナーを表示
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.className = 'alert alert-success alert-dismissible fade show position-fixed top-0 start-50 translate-middle-x mt-3';
+            notification.style.zIndex = '9999';
+            notification.style.minWidth = '400px';
+            notification.innerHTML = `
+                <i class="fas fa-check-circle me-2"></i>
+                <strong>診断結果を反映しました</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            `;
+            document.body.appendChild(notification);
+            
+            // 5秒後に自動で消す
+            setTimeout(() => {
+                notification.remove();
+            }, 5000);
+        }
+
+        // ページ読み込み時に診断結果を読み込む
+        window.addEventListener('DOMContentLoaded', function() {
+            loadSelectionResult();
+        });
+
+        // 初期表示
+        updateEstimate();
+    </script>
+</body>
+</html>

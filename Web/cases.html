@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>導入事例 - QNAP NAS ソリューション</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- ヘッダー -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="fas fa-server me-2"></i>QNAP NAS ソリューション
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">ホーム</a></li>
+                    <li class="nav-item"><a class="nav-link" href="selection.html">製品選定</a></li>
+                    <li class="nav-item"><a class="nav-link" href="comparison.html">製品比較</a></li>
+                    <li class="nav-item"><a class="nav-link" href="solutions.html">業種別ソリューション</a></li>
+                    <li class="nav-item"><a class="nav-link" href="estimate.html">見積もり作成</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="cases.html">導入事例</a></li>
+                    <li class="nav-item"><a class="nav-link" href="technical.html">技術資料</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ヘッダーセクション -->
+    <section class="bg-primary text-white py-5">
+        <div class="container text-center">
+            <h1 class="display-4 fw-bold mb-3">導入事例</h1>
+            <p class="lead">実際の導入事例から最適なソリューションを見つける</p>
+        </div>
+    </section>
+
+    <!-- フィルター -->
+    <section class="py-4 bg-light">
+        <div class="container">
+            <div class="row g-3">
+                <div class="col-md-3">
+                    <select class="form-select" id="industryFilter" onchange="filterCases()">
+                        <option value="">全業種</option>
+                        <option value="manufacturing">製造業</option>
+                        <option value="medical">医療・福祉</option>
+                        <option value="video">映像制作</option>
+                        <option value="design">設計・CAD</option>
+                        <option value="corporate">一般企業</option>
+                        <option value="construction">建設・工事</option>
+                        <option value="education">学校・教育</option>
+                        <option value="government">官公庁・自治体</option>
+                        <option value="retail">流通・販売</option>
+                        <option value="surveillance">監視カメラ</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <select class="form-select" id="sizeFilter" onchange="filterCases()">
+                        <option value="">全規模</option>
+                        <option value="small">小規模（～10人）</option>
+                        <option value="medium">中規模（10～50人）</option>
+                        <option value="large">大規模（50人～）</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <select class="form-select" id="productFilter" onchange="filterCases()">
+                        <option value="">全製品</option>
+                        <option value="ts233">TS-233</option>
+                        <option value="ts433eu">TS-433eU</option>
+                        <option value="tsh765eu">TS-h765eU</option>
+                        <option value="ts432pxu">TS-432PXU</option>
+                        <option value="tsh1277afx">TS-H1277AFX</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 導入事例一覧 -->
+    <section class="py-5">
+        <div class="container">
+            <!-- 事例1: 製造業 -->
+            <div class="card shadow-sm mb-4 case-item" data-industry="manufacturing" data-size="medium" data-product="ts433eu">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="d-flex mb-3">
+                                <span class="badge bg-primary me-2">製造業</span>
+                                <span class="badge bg-info me-2">30人規模</span>
+                                <span class="badge bg-success">TS-433eU</span>
+                            </div>
+                            <h3 class="card-title mb-3">A社様 - 金属加工メーカー</h3>
+                            <h5 class="text-muted mb-3">設計図面の集中管理と工場間データ共有</h5>
+                            
+                            <h6 class="mt-4 mb-2"><i class="fas fa-exclamation-triangle text-danger me-2"></i>導入前の課題</h6>
+                            <ul>
+                                <li>設計図面がPCごとに分散して管理されていた</li>
+                                <li>工場間でUSBメモリでデータをやり取りし非効率</li>
+                                <li>過去の図面を探すのに時間がかかる</li>
+                                <li>データの紛失リスクがあった</li>
+                            </ul>
+
+                            <h6 class="mt-4 mb-2"><i class="fas fa-check-circle text-success me-2"></i>導入後の効果</h6>
+                            <ul>
+                                <li>全設計図面を一元管理、検索時間が1/10に短縮</li>
+                                <li>2拠点間でリアルタイムにデータ共有</li>
+                                <li>RAID 5構成でデータ保護を実現</li>
+                                <li>スナップショット機能で過去バージョンも参照可能</li>
+                            </ul>
+
+                            <h6 class="mt-4 mb-2"><i class="fas fa-yen-sign text-primary me-2"></i>導入費用</h6>
+                            <p class="mb-2"><strong>機器費:</strong> ¥31万（TS-433eU 16TB構成）</p>
+                            <p class="mb-2"><strong>保守:</strong> センドバック保守3年 ¥6万</p>
+                            <p class="mb-2"><strong>初期設定:</strong> ¥5万</p>
+                            <p class="mb-0"><strong>総額:</strong> 約¥42万円</p>
+                            
+                            <div class="alert alert-info mt-3">
+                                <strong>ROI:</strong> データ探索時間の削減により、年間約100万円の工数削減を達成
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="bg-light p-3 rounded">
+                                <h6 class="mb-3"><i class="fas fa-box me-2"></i>導入製品</h6>
+                                <a href="https://www.elecom.co.jp/products/T433EUM104.html" target="_blank">
+                                    <img src="images/T433EUM104_01.jpg" alt="TS-433eU" class="img-fluid mb-3">
+                                </a>
+                                <p class="fw-bold mb-2">TS-433eU WD Red 16TB構成</p>
+                                <p class="text-muted small mb-3">型番: T433EUW404</p>
+                                <ul class="small mb-0">
+                                    <li>4ベイ ラックマウント</li>
+                                    <li>2.5GbE × 2</li>
+                                    <li>WD Red 4TB × 4</li>
+                                    <li>RAID 5構成（実効12TB）</li>
+                                    <li>arm Cortex-A55、4GB RAM</li>
+                                    <li>センドバック保守3年</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 事例2: 医療 -->
+            <div class="card shadow-sm mb-4 case-item" data-industry="medical" data-size="small" data-product="ts433eu">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="d-flex mb-3">
+                                <span class="badge bg-primary me-2">医療・福祉</span>
+                                <span class="badge bg-info me-2">8人規模</span>
+                                <span class="badge bg-success">TS-433eU</span>
+                            </div>
+                            <h3 class="card-title mb-3">B医院様 - 内科クリニック</h3>
+                            <h5 class="text-muted mb-3">電子カルテのバックアップとレントゲン画像保存</h5>
+                            
+                            <h6 class="mt-4 mb-2"><i class="fas fa-exclamation-triangle text-danger me-2"></i>導入前の課題</h6>
+                            <ul>
+                                <li>電子カルテのバックアップが不十分</li>
+                                <li>レントゲン画像の保存容量が不足</li>
+                                <li>患者データの長期保存が必要</li>
+                                <li>セキュリティ対策の強化が求められた</li>
+                            </ul>
+
+                            <h6 class="mt-4 mb-2"><i class="fas fa-check-circle text-success me-2"></i>導入後の効果</h6>
+                            <ul>
+                                <li>電子カルテを毎日自動バックアップ</li>
+                                <li>40TBの大容量で10年分の画像保存が可能に</li>
+                                <li>暗号化機能で患者情報を保護</li>
+                                <li>アクセス権限設定でスタッフごとに閲覧制限</li>
+                            </ul>
+
+                            <h6 class="mt-4 mb-2"><i class="fas fa-yen-sign text-primary me-2"></i>導入費用</h6>
+                            <p class="mb-2"><strong>機器費:</strong> ¥60万（TS-433eU 40TB構成）</p>
+                            <p class="mb-2"><strong>保守:</strong> オンサイト保守3年 ¥10万</p>
+                            <p class="mb-2"><strong>UPS:</strong> ¥3万（750VA）</p>
+                            <p class="mb-2"><strong>初期設定:</strong> ¥5万</p>
+                            <p class="mb-0"><strong>総額:</strong> 約¥78万円</p>
+                            
+                            <div class="alert alert-info mt-3">
+                                <strong>ROI:</strong> 個人情報保護法対応と災害対策を実現、安心して医療業務に専念できる環境を構築
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="bg-light p-3 rounded">
+                                <h6 class="mb-3"><i class="fas fa-box me-2"></i>導入製品</h6>
+                                <a href="https://www.elecom.co.jp/products/T433EUM104.html" target="_blank">
+                                    <img src="images/T433EUM104_01.jpg" alt="TS-433eU" class="img-fluid mb-3">
+                                </a>
+                                <p class="fw-bold mb-2">TS-433eU WD Red 40TB構成</p>
+                                <p class="text-muted small mb-3">型番: T433EUW1D4</p>
+                                <ul class="small mb-0">
+                                    <li>4ベイ ラックマウント</li>
+                                    <li>2.5GbE × 2</li>
+                                    <li>WD Red 10TB × 4</li>
+                                    <li>RAID 5構成（実効30TB）</li>
+                                    <li>暗号化機能、アクセス権限管理</li>
+                                    <li>オンサイト保守3年</li>
+                                    <li>UPS（750VA）付き</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 事例3: 映像制作 -->
+            <div class="card shadow-sm mb-4 case-item" data-industry="video" data-size="small" data-product="ts432pxu">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="d-flex mb-3">
+                                <span class="badge bg-primary me-2">映像制作</span>
+                                <span class="badge bg-info me-2">5人規模</span>
+                                <span class="badge bg-success">TS-432PXU</span>
+                            </div>
+                            <h3 class="card-title mb-3">C社様 - 映像制作スタジオ</h3>
+                            <h5 class="text-muted mb-3">4K動画編集の高速化とストレージ集約</h5>
+                            
+                            <h6 class="mt-4 mb-2"><i class="fas fa-exclamation-triangle text-danger me-2"></i>導入前の課題</h6>
+                            <ul>
+                                <li>外付けHDDが複数台に分散し管理が煩雑</li>
+                                <li>4K動画編集時の読み込み速度が遅い</li>
+                                <li>編集者間でのデータ共有に時間がかかる</li>
+                                <li>過去プロジェクトの検索が困難</li>
+                            </ul>
+
+                            <h6 class="mt-4 mb-2"><i class="fas fa-check-circle text-success me-2"></i>導入後の効果</h6>
+                            <ul>
+                                <li>10GbE接続で4K動画も快適に編集</li>
+                                <li>全プロジェクトファイルを一元管理</li>
+                                <li>複数の編集者が同時にアクセス可能</li>
+                                <li>編集作業時間が約30%短縮</li>
+                            </ul>
+
+                            <h6 class="mt-4 mb-2"><i class="fas fa-yen-sign text-primary me-2"></i>導入費用</h6>
+                            <p class="mb-0">初期費用: 約95万円（本体 + 40TB HDD + 10GbEスイッチ + 設定）</p>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="bg-light p-3 rounded">
+                                <h6 class="mb-3"><i class="fas fa-box me-2"></i>導入製品</h6>
+                                <a href="https://www.elecom.co.jp/products/T432PXUM104.html" target="_blank">
+                                    <img src="images/T432PXUM104_01.jpg" alt="TS-432PXU" class="img-fluid mb-3">
+                                </a>
+                                <p class="fw-bold mb-2">TS-432PXU 40TB構成</p>
+                                <ul class="small mb-0">
+                                    <li>4ベイ ラックマウント</li>
+                                    <li>10GbE SFP+ × 2</li>
+                                    <li>HDD 10TB × 4</li>
+                                    <li>RAID 5構成</li>
+                                    <li>10GbEスイッチ付き</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 事例4: 設計 -->
+            <div class="card shadow-sm mb-4 case-item" data-industry="design" data-size="medium" data-product="tsh765eu">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="d-flex mb-3">
+                                <span class="badge bg-primary me-2">設計・CAD</span>
+                                <span class="badge bg-info me-2">20人規模</span>
+                                <span class="badge bg-success">TS-h765eU</span>
+                            </div>
+                            <h3 class="card-title mb-3">D設計事務所様 - 建築設計</h3>
+                            <h5 class="text-muted mb-3">大容量CADデータの共有と履歴管理</h5>
+                            
+                            <h6 class="mt-4 mb-2"><i class="fas fa-exclamation-triangle text-danger me-2"></i>導入前の課題</h6>
+                            <ul>
+                                <li>CADファイルのバージョン管理が困難</li>
+                                <li>設計者ごとにファイルが分散</li>
+                                <li>3Dモデルの読み込みに時間がかかる</li>
+                                <li>プロジェクトごとのデータ整理が煩雑</li>
+                            </ul>
+
+                            <h6 class="mt-4 mb-2"><i class="fas fa-check-circle text-success me-2"></i>導入後の効果</h6>
+                            <ul>
+                                <li>スナップショット機能でバージョン管理を自動化</li>
+                                <li>高性能CPUと8GB RAMで快適なアクセス</li>
+                                <li>プロジェクトフォルダーを統一し検索性向上</li>
+                                <li>過去図面への参照時間が1/5に短縮</li>
+                            </ul>
+
+                            <h6 class="mt-4 mb-2"><i class="fas fa-yen-sign text-primary me-2"></i>導入費用</h6>
+                            <p class="mb-0">初期費用: 約70万円（本体 + 16TB HDD + 初期設定 + 教育）</p>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="bg-light p-3 rounded">
+                                <h6 class="mb-3"><i class="fas fa-box me-2"></i>導入製品</h6>
+                                <a href="https://www.elecom.co.jp/products/TH765EUN104.html" target="_blank">
+                                    <img src="images/TS-765eU_01.png" alt="TS-h765eU" class="img-fluid mb-3">
+                                </a>
+                                <p class="fw-bold mb-2">TS-h765eU 16TB構成</p>
+                                <ul class="small mb-0">
+                                    <li>4ベイ ラックマウント</li>
+                                    <li>2.5GbE × 2</li>
+                                    <li>HDD 4TB × 4</li>
+                                    <li>8GB RAM</li>
+                                    <li>RAID 5構成</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 事例5: 一般企業 -->
+            <div class="card shadow-sm mb-4 case-item" data-industry="corporate" data-size="small" data-product="ts233">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="d-flex mb-3">
+                                <span class="badge bg-primary me-2">一般企業</span>
+                                <span class="badge bg-info me-2">5人規模</span>
+                                <span class="badge bg-success">TS-233</span>
+                            </div>
+                            <h3 class="card-title mb-3">E商事様 - 貿易会社</h3>
+                            <h5 class="text-muted mb-3">ファイルサーバー導入とバックアップ強化</h5>
+                            
+                            <h6 class="mt-4 mb-2"><i class="fas fa-exclamation-triangle text-danger me-2"></i>導入前の課題</h6>
+                            <ul>
+                                <li>ファイル共有はUSBメモリやメール添付</li>
+                                <li>重要書類のバックアップが不十分</li>
+                                <li>在宅勤務時のファイルアクセスが困難</li>
+                                <li>低コストでNASを導入したい</li>
+                            </ul>
+
+                            <h6 class="mt-4 mb-2"><i class="fas fa-check-circle text-success me-2"></i>導入後の効果</h6>
+                            <ul>
+                                <li>社内の全ファイルを一元管理</li>
+                                <li>VPN接続で在宅勤務も快適に</li>
+                                <li>自動バックアップでデータ保護</li>
+                                <li>低コストで信頼性の高いストレージを実現</li>
+                            </ul>
+
+                            <h6 class="mt-4 mb-2"><i class="fas fa-yen-sign text-primary me-2"></i>導入費用</h6>
+                            <p class="mb-0">初期費用: 約15万円（本体 + 初期設定）</p>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="bg-light p-3 rounded">
+                                <h6 class="mb-3"><i class="fas fa-box me-2"></i>導入製品</h6>
+                                <a href="https://www.elecom.co.jp/products/T233M102E.html" target="_blank">
+                                    <img src="images/T233M102E_01.jpg" alt="TS-233" class="img-fluid mb-3">
+                                </a>
+                                <p class="fw-bold mb-2">TS-233 2TB構成</p>
+                                <ul class="small mb-0">
+                                    <li>2ベイ タワー型</li>
+                                    <li>1GbE × 1</li>
+                                    <li>HDD 1TB × 2</li>
+                                    <li>RAID 1構成</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 事例6: 建設・工事 -->
+            <div class="card shadow-sm mb-4 case-item" data-industry="construction" data-size="medium" data-product="ts433eu">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="d-flex mb-3">
+                                <span class="badge bg-primary me-2">建設・工事</span>
+                                <span class="badge bg-info me-2">本社50人+現場3拠点</span>
+                                <span class="badge bg-success">TS-h765eU + TS-433eU×3</span>
+                            </div>
+                            <h3 class="card-title mb-3">F社様 - 総合建設会社</h3>
+                            <h5 class="text-muted mb-3">本社と複数現場のCAD図面・工事データ共有</h5>
+                            
+                            <h6 class="mt-4 mb-2"><i class="fas fa-exclamation-triangle text-danger me-2"></i>導入前の課題</h6>
+                            <ul>
+                                <li>現場ごとにCAD図面が分散、本社で一元管理できない</li>
+                                <li>最新図面がどれか分からず、施工ミスのリスク</li>
+                                <li>工事写真・施工管理データのバージョン管理が困難</li>
+                                <li>承認フローが煩雑で、図面承認に時間がかかる</li>
+                            </ul>
+                            
+                            <h6 class="mt-4 mb-2"><i class="fas fa-check-circle text-success me-2"></i>導入後の効果</h6>
+                            <ul>
+                                <li>本社NASで全案件を一元管理、各現場から安全にアクセス</li>
+                                <li>夜間自動同期により、常に最新データを共有</li>
+                                <li>スナップショット機能で過去バージョンも即座に復元</li>
+                                <li>承認ワークフローで図面承認時間を50%短縮</li>
+                            </ul>
+                            
+                            <div class="alert alert-info mt-4">
+                                <strong>投資対効果:</strong> 施工ミスによる手戻りが90%削減、年間約300万円のコスト削減に成功
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="bg-light p-3 rounded">
+                                <h6 class="fw-bold mb-3">導入システム</h6>
+                                <a href="https://www.elecom.co.jp/products/TH765EUN104.html" target="_blank">
+                                    <img src="images/TS-765eU_01.png" alt="TS-h765eU" class="img-fluid mb-3">
+                                </a>
+                                <p class="fw-bold mb-2">本社: TS-h765eU 40TB</p>
+                                <p class="fw-bold mb-2">現場×3: TS-433eU 16TB</p>
+                                <p class="text-muted small mb-3">総額: ¥201万（保守込）</p>
+                                <ul class="small mb-0">
+                                    <li>拠点間VPN接続</li>
+                                    <li>Active Directory統合</li>
+                                    <li>スナップショット・バージョン管理</li>
+                                    <li>オンサイト保守3年</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 事例7: 学校・教育 -->
+            <div class="card shadow-sm mb-4 case-item" data-industry="education" data-size="medium" data-product="ts433eu">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="d-flex mb-3">
+                                <span class="badge bg-primary me-2">学校・教育</span>
+                                <span class="badge bg-info me-2">教職員30人、児童生徒500人</span>
+                                <span class="badge bg-success">TS-433eU×2台</span>
+                            </div>
+                            <h3 class="card-title mb-3">G中学校様</h3>
+                            <h5 class="text-muted mb-3">GIGAスクール構想対応・校務と授業データの安全な分離</h5>
+                            
+                            <h6 class="mt-4 mb-2"><i class="fas fa-exclamation-triangle text-danger me-2"></i>導入前の課題</h6>
+                            <ul>
+                                <li>校務データと授業データが同一サーバーでセキュリティリスク</li>
+                                <li>GIGAスクール端末300台のデータ保存先がない</li>
+                                <li>個人情報保護法対応が不十分</li>
+                                <li>バックアップ体制が整っていない</li>
+                            </ul>
+                            
+                            <h6 class="mt-4 mb-2"><i class="fas fa-check-circle text-success me-2"></i>導入後の効果</h6>
+                            <ul>
+                                <li>校務用・授業用でNAS完全分離、セキュリティ強化</li>
+                                <li>GIGA端末からスムーズにアクセス、課題提出も効率化</li>
+                                <li>Active Directory統合で教職員の認証管理を一元化</li>
+                                <li>自動バックアップで万が一のデータ消失にも対応</li>
+                            </ul>
+                            
+                            <div class="alert alert-info mt-4">
+                                <strong>投資対効果:</strong> 教材印刷コストが年間約50万円削減、教職員の働き方改革にも貢献
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="bg-light p-3 rounded">
+                                <h6 class="fw-bold mb-3">導入システム</h6>
+                                <a href="https://www.elecom.co.jp/products/T433EUM104.html" target="_blank">
+                                    <img src="images/T433EUM104_01.jpg" alt="TS-433eU" class="img-fluid mb-3">
+                                </a>
+                                <p class="fw-bold mb-2">校務用: TS-433eU 16TB</p>
+                                <p class="fw-bold mb-2">授業用: TS-433eU 16TB</p>
+                                <p class="text-muted small mb-3">総額: ¥79万（保守込）</p>
+                                <ul class="small mb-0">
+                                    <li>RAID 5、実効12TB×2台</li>
+                                    <li>Active Directory統合</li>
+                                    <li>校務用: オンサイト保守3年</li>
+                                    <li>授業用: センドバック保守3年</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 事例8: 官公庁・自治体 -->
+            <div class="card shadow-sm mb-4 case-item" data-industry="government" data-size="large" data-product="tsh765eu">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="d-flex mb-3">
+                                <span class="badge bg-primary me-2">官公庁・自治体</span>
+                                <span class="badge bg-info me-2">職員100人</span>
+                                <span class="badge bg-success">TS-h765eU ニアライン×2台</span>
+                            </div>
+                            <h3 class="card-title mb-3">H市役所様</h3>
+                            <h5 class="text-muted mb-3">公文書の長期保存とBCP対策の実現</h5>
+                            
+                            <h6 class="mt-4 mb-2"><i class="fas fa-exclamation-triangle text-danger me-2"></i>導入前の課題</h6>
+                            <ul>
+                                <li>公文書管理法対応の長期保存（10年）が困難</li>
+                                <li>災害時のBCP対策が不十分</li>
+                                <li>住民情報・台帳データのセキュリティ強化が必要</li>
+                                <li>情報公開請求時の文書検索に時間がかかる</li>
+                            </ul>
+                            
+                            <h6 class="mt-4 mb-2"><i class="fas fa-check-circle text-success me-2"></i>導入後の効果</h6>
+                            <ul>
+                                <li>ニアラインHDD（5年保証）で10年以上の長期保存を実現</li>
+                                <li>遠隔地（別施設）にバックアップNAS設置、BCP対策完了</li>
+                                <li>暗号化・アクセス権限で個人情報を厳重保護</li>
+                                <li>全文検索機能で情報公開請求への対応時間を70%短縮</li>
+                            </ul>
+                            
+                            <div class="alert alert-info mt-4">
+                                <strong>投資対効果:</strong> 年間の文書管理コストが約150万円削減、情報公開業務の効率化を実現
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="bg-light p-3 rounded">
+                                <h6 class="fw-bold mb-3">導入システム</h6>
+                                <a href="https://www.elecom.co.jp/products/TH765EUN104.html" target="_blank">
+                                    <img src="images/TS-765eU_01.png" alt="TS-h765eU" class="img-fluid mb-3">
+                                </a>
+                                <p class="fw-bold mb-2">本庁: TS-h765eU ニアライン 48TB</p>
+                                <p class="fw-bold mb-2">遠隔地: TS-h765eU ニアライン 48TB</p>
+                                <p class="text-muted small mb-3">総額: ¥192万（保守込）</p>
+                                <ul class="small mb-0">
+                                    <li>12TB×4、RAID 6、実効24TB×2拠点</li>
+                                    <li>ニアラインHDD（5年保証）</li>
+                                    <li>本庁: オンサイト保守5年</li>
+                                    <li>遠隔地: センドバック保守5年</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 事例9: 流通・販売 -->
+            <div class="card shadow-sm mb-4 case-item" data-industry="retail" data-size="medium" data-product="tsh765eu">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="d-flex mb-3">
+                                <span class="badge bg-primary me-2">流通・販売</span>
+                                <span class="badge bg-info me-2">本部20人+店舗5店</span>
+                                <span class="badge bg-success">TS-h765eU + TS-233×5</span>
+                            </div>
+                            <h3 class="card-title mb-3">I社様 - 食品小売チェーン</h3>
+                            <h5 class="text-muted mb-3">複数店舗のPOS・在庫データ一元管理</h5>
+                            
+                            <h6 class="mt-4 mb-2"><i class="fas fa-exclamation-triangle text-danger me-2"></i>導入前の課題</h6>
+                            <ul>
+                                <li>各店舗のPOS・販売データが本部で把握できない</li>
+                                <li>在庫管理がリアルタイムでなく、欠品・過剰在庫が発生</li>
+                                <li>顧客情報（CRM）が店舗ごとに分散</li>
+                                <li>営業時間中のシステムダウンが許されない</li>
+                            </ul>
+                            
+                            <h6 class="mt-4 mb-2"><i class="fas fa-check-circle text-success me-2"></i>導入後の効果</h6>
+                            <ul>
+                                <li>夜間自動同期で本部が全店舗のデータを即座に把握</li>
+                                <li>リアルタイム在庫管理により、欠品率を80%削減</li>
+                                <li>顧客情報を本部で一元管理、効果的なマーケティング施策を展開</li>
+                                <li>RAID構成で安定稼働、ダウンタイムゼロを実現</li>
+                            </ul>
+                            
+                            <div class="alert alert-info mt-4">
+                                <strong>投資対効果:</strong> 欠品・過剰在庫の削減で年間約500万円のコスト削減を達成
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="bg-light p-3 rounded">
+                                <h6 class="fw-bold mb-3">導入システム</h6>
+                                <a href="https://www.elecom.co.jp/products/TH765EUN104.html" target="_blank">
+                                    <img src="images/TS-765eU_01.png" alt="TS-h765eU" class="img-fluid mb-3">
+                                </a>
+                                <p class="fw-bold mb-2">本部: TS-h765eU 32TB</p>
+                                <p class="fw-bold mb-2">各店舗×5: TS-233 4TB</p>
+                                <p class="text-muted small mb-3">総額: ¥123万（保守込）</p>
+                                <ul class="small mb-0">
+                                    <li>本部: 8TB×4、RAID 6、実効16TB</li>
+                                    <li>店舗: 2TB×2、RAID 1、実効2TB</li>
+                                    <li>夜間自動同期</li>
+                                    <li>本部: オンサイト保守3年</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 事例10: 監視カメラ -->
+            <div class="card shadow-sm mb-4 case-item" data-industry="surveillance" data-size="medium" data-product="tsh765eu">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="d-flex mb-3">
+                                <span class="badge bg-primary me-2">監視カメラ</span>
+                                <span class="badge bg-info me-2">カメラ16台</span>
+                                <span class="badge bg-success">TS-h765eU WD Purple</span>
+                            </div>
+                            <h3 class="card-title mb-3">J社様 - 物流センター</h3>
+                            <h5 class="text-muted mb-3">24時間監視体制とAIイベント検知の実現</h5>
+                            
+                            <h6 class="mt-4 mb-2"><i class="fas fa-exclamation-triangle text-danger me-2"></i>導入前の課題</h6>
+                            <ul>
+                                <li>従来のDVRでは録画容量が不足（7日間しか保存できない）</li>
+                                <li>24時間連続書き込みでHDDの故障頻度が高い</li>
+                                <li>映像を目視で確認するため、異常検知に時間がかかる</li>
+                                <li>複数拠点の映像を統合管理できない</li>
+                            </ul>
+                            
+                            <h6 class="mt-4 mb-2"><i class="fas fa-check-circle text-success me-2"></i>導入後の効果</h6>
+                            <ul>
+                                <li>WD Purple（監視カメラ専用HDD）で30日間の長期録画を実現</li>
+                                <li>24時間連続稼働でもHDD故障率が大幅に低下</li>
+                                <li>AIイベント検知・顔認識で異常を即座に通知</li>
+                                <li>QVR Proで複数拠点の映像を本社から一元管理</li>
+                            </ul>
+                            
+                            <div class="alert alert-info mt-4">
+                                <strong>投資対効果:</strong> セキュリティインシデント対応時間を90%短縮、盗難・事故の迅速な解決に貢献
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="bg-light p-3 rounded">
+                                <h6 class="fw-bold mb-3">導入システム</h6>
+                                <a href="https://www.elecom.co.jp/products/TH765EUN104.html" target="_blank">
+                                    <img src="images/TS-765eU_01.png" alt="TS-h765eU" class="img-fluid mb-3">
+                                </a>
+                                <p class="fw-bold mb-2">TS-h765eU WD Purple構成</p>
+                                <p class="text-muted small mb-3">総額: ¥62～67万（保守込）</p>
+                                <ul class="small mb-0">
+                                    <li>WD Purple 4TB×4、RAID 5、実効12TB</li>
+                                    <li>監視カメラ専用HDD（180万時間MTBF）</li>
+                                    <li>QVR Pro 16chライセンス</li>
+                                    <li>AIイベント検知・顔認識</li>
+                                    <li>センドバック保守5年</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTAセクション -->
+    <section class="py-5 bg-primary text-white">
+        <div class="container text-center">
+            <h2 class="mb-4">あなたの会社に最適なNASを見つけましょう</h2>
+            <p class="lead mb-4">簡単な質問に答えるだけで、最適な製品をご提案します</p>
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+                <a href="selection.html" class="btn btn-light btn-lg px-5">
+                    <i class="fas fa-search me-2"></i>製品を選ぶ
+                </a>
+                <a href="estimate.html" class="btn btn-outline-light btn-lg px-5">
+                    <i class="fas fa-calculator me-2"></i>見積もり作成
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>QNAP NAS ソリューション提案サイト</h5>
+                    <p class="text-muted">エレコム取扱いQNAP製品の提案をサポートします</p>
+                </div>
+                <div class="col-md-3">
+                    <h6>サイトマップ</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white-50 text-decoration-none">ホーム</a></li>
+                        <li><a href="selection.html" class="text-white-50 text-decoration-none">製品選定</a></li>
+                        <li><a href="comparison.html" class="text-white-50 text-decoration-none">製品比較</a></li>
+                        <li><a href="solutions.html" class="text-white-50 text-decoration-none">業種別ソリューション</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h6>その他</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="estimate.html" class="text-white-50 text-decoration-none">見積もり作成</a></li>
+                        <li><a href="cases.html" class="text-white-50 text-decoration-none">導入事例</a></li>
+                        <li><a href="technical.html" class="text-white-50 text-decoration-none">技術資料</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="border-secondary">
+            <div class="text-center text-muted">
+                <p class="mb-0">&copy; 2025 QNAP NAS Solution. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function filterCases() {
+            const industry = document.getElementById('industryFilter').value;
+            const size = document.getElementById('sizeFilter').value;
+            const product = document.getElementById('productFilter').value;
+
+            document.querySelectorAll('.case-item').forEach(item => {
+                let show = true;
+                
+                if (industry && item.dataset.industry !== industry) show = false;
+                if (size && item.dataset.size !== size) show = false;
+                if (product && item.dataset.product !== product) show = false;
+                
+                item.style.display = show ? 'block' : 'none';
+            });
+        }
+    </script>
+</body>
+</html>

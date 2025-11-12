@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>製品選定ツール - QNAP NAS ソリューション</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- ヘッダー -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="fas fa-server me-2"></i>QNAP NAS ソリューション
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">ホーム</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="selection.html">製品選定</a></li>
+                    <li class="nav-item"><a class="nav-link" href="comparison.html">製品比較</a></li>
+                    <li class="nav-item"><a class="nav-link" href="solutions.html">業種別ソリューション</a></li>
+                    <li class="nav-item"><a class="nav-link" href="estimate.html">見積もり作成</a></li>
+                    <li class="nav-item"><a class="nav-link" href="cases.html">導入事例</a></li>
+                    <li class="nav-item"><a class="nav-link" href="technical.html">技術資料</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ヘッダーセクション -->
+    <section class="bg-primary text-white py-5">
+        <div class="container text-center">
+            <h1 class="display-4 fw-bold mb-3">製品選定ツール</h1>
+            <p class="lead">簡単な質問に答えるだけで、あなたに最適なQNAP NASを診断します</p>
+        </div>
+    </section>
+
+    <!-- 診断フォーム -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="card shadow-lg border-0">
+                        <div class="card-body p-5">
+                            <div id="selectionForm">
+                                <!-- 基本情報 -->
+                                <div class="card mb-4">
+                                    <div class="card-header bg-primary text-white">
+                                        <h5 class="mb-0"><i class="fas fa-info-circle me-2"></i>基本情報</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="mb-4">
+                                            <label class="form-label fw-bold">業種を選択してください</label>
+                                            <select class="form-select form-select-lg" id="industry">
+                                                <option value="">選択してください</option>
+                                                <option value="manufacturing">製造業</option>
+                                                <option value="medical">医療・福祉</option>
+                                                <option value="construction">建設業</option>
+                                                <option value="education">教育機関</option>
+                                                <option value="office">一般企業・オフィス</option>
+                                                <option value="government">官公庁・自治体</option>
+                                                <option value="retail">流通・販売</option>
+                                                <option value="creative">クリエイティブ（動画編集・デザイン）</option>
+                                                <option value="surveillance">監視カメラ・セキュリティ</option>
+                                                <option value="it">IT・ソフトウェア開発</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="mb-4">
+                                            <label class="form-label fw-bold">ユーザー数は？</label>
+                                            <div class="row g-3">
+                                                <div class="col-6 col-md-3">
+                                                    <input type="radio" class="btn-check" name="users" id="users1" value="1-5">
+                                                    <label class="btn btn-outline-primary w-100 py-3" for="users1">
+                                                        <i class="fas fa-user fa-2x d-block mb-2"></i>
+                                                        ～5人
+                                                    </label>
+                                                </div>
+                                                <div class="col-6 col-md-3">
+                                                    <input type="radio" class="btn-check" name="users" id="users2" value="5-20">
+                                                    <label class="btn btn-outline-primary w-100 py-3" for="users2">
+                                                        <i class="fas fa-users fa-2x d-block mb-2"></i>
+                                                        5～20人
+                                                    </label>
+                                                </div>
+                                                <div class="col-6 col-md-3">
+                                                    <input type="radio" class="btn-check" name="users" id="users3" value="20-50">
+                                                    <label class="btn btn-outline-primary w-100 py-3" for="users3">
+                                                        <i class="fas fa-users fa-2x d-block mb-2"></i>
+                                                        20～50人
+                                                    </label>
+                                                </div>
+                                                <div class="col-6 col-md-3">
+                                                    <input type="radio" class="btn-check" name="users" id="users4" value="50+">
+                                                    <label class="btn btn-outline-primary w-100 py-3" for="users4">
+                                                        <i class="fas fa-users fa-2x d-block mb-2"></i>
+                                                        50人以上
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 容量・性能 -->
+                                <div class="card mb-4">
+                                    <div class="card-header bg-info text-white">
+                                        <h5 class="mb-0"><i class="fas fa-hdd me-2"></i>容量・性能</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="mb-4">
+                                            <label class="form-label fw-bold">必要な容量は？（実効容量）</label>
+                                            <input type="range" class="form-range" min="1" max="100" value="10" id="capacityRange">
+                                            <div class="text-center mt-2">
+                                                <span class="badge bg-primary fs-5" id="capacityValue">10TB</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-4">
+                                            <label class="form-label fw-bold">主な用途は？（複数選択可）</label>
+                                            <div class="row g-3">
+                                                <div class="col-md-6">
+                                                    <div class="form-check form-check-lg p-3 border rounded">
+                                                        <input class="form-check-input" type="checkbox" value="file-sharing" id="use1">
+                                                        <label class="form-check-label" for="use1">
+                                                            <i class="fas fa-folder-open text-primary me-2"></i>
+                                                            ファイル共有
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-check form-check-lg p-3 border rounded">
+                                                        <input class="form-check-input" type="checkbox" value="backup" id="use2">
+                                                        <label class="form-check-label" for="use2">
+                                                            <i class="fas fa-save text-success me-2"></i>
+                                                            バックアップ
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-check form-check-lg p-3 border rounded">
+                                                        <input class="form-check-input" type="checkbox" value="video" id="use3">
+                                                        <label class="form-check-label" for="use3">
+                                                            <i class="fas fa-video text-danger me-2"></i>
+                                                            動画編集
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-check form-check-lg p-3 border rounded">
+                                                        <input class="form-check-input" type="checkbox" value="surveillance" id="use4">
+                                                        <label class="form-check-label" for="use4">
+                                                            <i class="fas fa-camera text-warning me-2"></i>
+                                                            監視カメラ録画
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-check form-check-lg p-3 border rounded">
+                                                        <input class="form-check-input" type="checkbox" value="ransomware" id="use5">
+                                                        <label class="form-check-label" for="use5">
+                                                            <i class="fas fa-shield-alt text-danger me-2"></i>
+                                                            ランサムウェア対策
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-check form-check-lg p-3 border rounded">
+                                                        <input class="form-check-input" type="checkbox" value="cloud" id="use6">
+                                                        <label class="form-check-label" for="use6">
+                                                            <i class="fas fa-cloud text-info me-2"></i>
+                                                            クラウド連携
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-check form-check-lg p-3 border rounded">
+                                                        <input class="form-check-input" type="checkbox" value="virtualization" id="use7">
+                                                        <label class="form-check-label" for="use7">
+                                                            <i class="fas fa-server text-primary me-2"></i>
+                                                            仮想化環境バックアップ
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-check form-check-lg p-3 border rounded">
+                                                        <input class="form-check-input" type="checkbox" value="bcp" id="use8">
+                                                        <label class="form-check-label" for="use8">
+                                                        <i class="fas fa-exclamation-triangle text-warning me-2"></i>
+                                                        BCP対策（災害対策）
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-4">
+                                        <label class="form-label fw-bold">必要なネットワーク速度は？</label>
+                                        <div class="row g-3">
+                                            <div class="col-md-4">
+                                                <input type="radio" class="btn-check" name="network" id="network1" value="1gbe">
+                                                <label class="btn btn-outline-info w-100 py-3" for="network1">
+                                                    <i class="fas fa-network-wired fa-2x d-block mb-2"></i>
+                                                    <strong>1GbE</strong>
+                                                    <small class="d-block text-muted">標準的な速度</small>
+                                                </label>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <input type="radio" class="btn-check" name="network" id="network2" value="2.5gbe">
+                                                <label class="btn btn-outline-info w-100 py-3" for="network2">
+                                                    <i class="fas fa-network-wired fa-2x d-block mb-2"></i>
+                                                    <strong>2.5GbE</strong>
+                                                    <small class="d-block text-muted">高速転送</small>
+                                                </label>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <input type="radio" class="btn-check" name="network" id="network3" value="10gbe">
+                                                <label class="btn btn-outline-info w-100 py-3" for="network3">
+                                                    <i class="fas fa-network-wired fa-2x d-block mb-2"></i>
+                                                    <strong>10GbE</strong>
+                                                    <small class="d-block text-muted">超高速・大容量</small>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-4">
+                                        <label class="form-label fw-bold">バックアップ要件は？</label>
+                                        <small class="text-muted d-block mb-3">該当するものを全て選択してください</small>
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-check mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="backup1" value="nas_to_nas">
+                                                    <label class="form-check-label" for="backup1">
+                                                        <i class="fas fa-server text-primary me-2"></i>
+                                                        <strong>NAS to NAS</strong>
+                                                        <small class="d-block text-muted">オンサイトの別NASへバックアップ</small>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-check mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="backup2" value="cloud">
+                                                    <label class="form-check-label" for="backup2">
+                                                        <i class="fas fa-cloud text-info me-2"></i>
+                                                        <strong>クラウドバックアップ</strong>
+                                                        <small class="d-block text-muted">AWS/Azure等への自動バックアップ</small>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-check mb-3">
+                                                    <input class="form-check-input" type="checkbox" id="backup3" value="external_hdd">
+                                                    <label class="form-check-label" for="backup3">
+                                                        <i class="fas fa-hdd text-secondary me-2"></i>
+                                                        <strong>外付けHDD</strong>
+                                                        <small class="d-block text-muted">USB接続で定期バックアップ</small>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 信頼性・予算 -->
+                                <div class="card mb-4">
+                                    <div class="card-header bg-success text-white">
+                                        <h5 class="mb-0"><i class="fas fa-shield-alt me-2"></i>信頼性・予算</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="mb-4">
+                                            <label class="form-label fw-bold">ダウンタイム許容度は？</label>
+                                            <select class="form-select form-select-lg" id="downtime">
+                                                <option value="">選択してください</option>
+                                                <option value="week">1週間程度なら許容</option>
+                                                <option value="days">1～2日なら許容</option>
+                                                <option value="day">当日復旧必須</option>
+                                                <option value="hours">数時間以内に復旧必須</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="mb-4">
+                                            <label class="form-label fw-bold">予算は？</label>
+                                            <div class="row g-3">
+                                                <div class="col-md-6 col-lg-3">
+                                                    <input type="radio" class="btn-check" name="budget" id="budget1" value="0-30">
+                                                    <label class="btn btn-outline-success w-100 py-3" for="budget1">
+                                                        <i class="fas fa-dollar-sign fa-2x d-block mb-2"></i>
+                                                        ～30万円
+                                                    </label>
+                                                </div>
+                                                <div class="col-md-6 col-lg-3">
+                                                    <input type="radio" class="btn-check" name="budget" id="budget2" value="30-80">
+                                                    <label class="btn btn-outline-success w-100 py-3" for="budget2">
+                                                        <i class="fas fa-dollar-sign fa-2x d-block mb-2"></i>
+                                                        30～80万円
+                                                    </label>
+                                                </div>
+                                                <div class="col-md-6 col-lg-3">
+                                                    <input type="radio" class="btn-check" name="budget" id="budget3" value="80-300">
+                                                    <label class="btn btn-outline-success w-100 py-3" for="budget3">
+                                                        <i class="fas fa-dollar-sign fa-2x d-block mb-2"></i>
+                                                        80～300万円
+                                                    </label>
+                                                </div>
+                                                <div class="col-md-6 col-lg-3">
+                                                    <input type="radio" class="btn-check" name="budget" id="budget4" value="300+">
+                                                    <label class="btn btn-outline-success w-100 py-3" for="budget4">
+                                                        <i class="fas fa-dollar-sign fa-2x d-block mb-2"></i>
+                                                        300万円以上
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="text-center mt-4">
+                                            <button class="btn btn-primary btn-lg px-5" onclick="showResult()">
+                                                <i class="fas fa-search me-2"></i> 診断結果を見る
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 結果表示エリア -->
+                                <div id="resultArea" style="display: none;">
+                                    <div id="resultContent"></div>
+                                    <div class="d-flex justify-content-center gap-3 mt-4">
+                                        <button class="btn btn-outline-secondary btn-lg px-5" onclick="resetForm()">
+                                            <i class="fas fa-redo me-2"></i> もう一度診断する
+                                        </button>
+                                        <button class="btn btn-success btn-lg px-5" onclick="proceedToEstimate()">
+                                            <i class="fas fa-calculator me-2"></i> この構成で見積もり作成
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="text-center text-muted">
+                <p class="mb-0">&copy; 2025 QNAP NAS Solution. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/selection.js"></script>
+</body>
+</html>

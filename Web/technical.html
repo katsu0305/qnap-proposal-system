@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>技術資料 - QNAP NAS ソリューション</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- ヘッダー -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="fas fa-server me-2"></i>QNAP NAS ソリューション
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">ホーム</a></li>
+                    <li class="nav-item"><a class="nav-link" href="selection.html">製品選定</a></li>
+                    <li class="nav-item"><a class="nav-link" href="comparison.html">製品比較</a></li>
+                    <li class="nav-item"><a class="nav-link" href="solutions.html">業種別ソリューション</a></li>
+                    <li class="nav-item"><a class="nav-link" href="estimate.html">見積もり作成</a></li>
+                    <li class="nav-item"><a class="nav-link" href="cases.html">導入事例</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="technical.html">技術資料</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ヘッダーセクション -->
+    <section class="bg-primary text-white py-5">
+        <div class="container text-center">
+            <h1 class="display-4 fw-bold mb-3">技術資料</h1>
+            <p class="lead">QNAP NASの技術情報とベストプラクティス</p>
+        </div>
+    </section>
+
+    <!-- 技術資料カテゴリ -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-4 mb-5">
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm hover-lift">
+                        <div class="card-body text-center">
+                            <i class="fas fa-database fa-3x text-primary mb-3"></i>
+                            <h4>RAID構成ガイド</h4>
+                            <p class="text-muted">用途に応じた最適なRAID構成の選び方</p>
+                            <a href="#raid" class="btn btn-outline-primary">詳細を見る</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm hover-lift">
+                        <div class="card-body text-center">
+                            <i class="fas fa-network-wired fa-3x text-success mb-3"></i>
+                            <h4>ネットワーク設定</h4>
+                            <p class="text-muted">1GbE/2.5GbE/10GbEの選択と設定方法</p>
+                            <a href="#network" class="btn btn-outline-success">詳細を見る</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm hover-lift">
+                        <div class="card-body text-center">
+                            <i class="fas fa-shield-alt fa-3x text-warning mb-3"></i>
+                            <h4>セキュリティ設定</h4>
+                            <p class="text-muted">データ保護とアクセス制御のベストプラクティス</p>
+                            <a href="#security" class="btn btn-outline-warning">詳細を見る</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RAID構成ガイド -->
+            <div id="raid" class="mb-5">
+                <h2 class="mb-4"><i class="fas fa-database text-primary me-3"></i>RAID構成ガイド</h2>
+                
+                <div class="card shadow-sm mb-4">
+                    <div class="card-header bg-light">
+                        <h5 class="mb-0">RAID 0 - ストライピング</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <h6>特徴</h6>
+                                <ul>
+                                    <li>複数のディスクにデータを分散して書き込み</li>
+                                    <li>全ディスクの容量を使用可能</li>
+                                    <li>読み書き速度が向上</li>
+                                    <li><strong class="text-danger">冗長性なし：1台でも故障するとデータ消失</strong></li>
+                                </ul>
+                                <h6 class="mt-3">推奨用途</h6>
+                                <p>高速性が重要で、データ損失のリスクが許容できる一時的な作業領域</p>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="alert alert-warning">
+                                    <strong>容量効率: 100%</strong><br>
+                                    <strong>最小ディスク数: 2</strong><br>
+                                    <strong>耐障害性: なし</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm mb-4">
+                    <div class="card-header bg-light">
+                        <h5 class="mb-0">RAID 1 - ミラーリング</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <h6>特徴</h6>
+                                <ul>
+                                    <li>2台のディスクに同じデータを保存</li>
+                                    <li>1台が故障してもデータは保護される</li>
+                                    <li>読み込み速度が向上</li>
+                                    <li>容量効率は50%</li>
+                                </ul>
+                                <h6 class="mt-3">推奨用途</h6>
+                                <p>小規模オフィス、重要データの保護、2ベイNAS（TS-233など）</p>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="alert alert-info">
+                                    <strong>容量効率: 50%</strong><br>
+                                    <strong>最小ディスク数: 2</strong><br>
+                                    <strong>耐障害性: 1台</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm mb-4 border-primary">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">RAID 5 - 分散パリティ（推奨）</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <h6>特徴</h6>
+                                <ul>
+                                    <li>データとパリティ情報を分散して保存</li>
+                                    <li>1台のディスク故障まで耐えられる</li>
+                                    <li>容量効率が高い（n-1台分の容量を使用）</li>
+                                    <li>読み込み速度が向上</li>
+                                </ul>
+                                <h6 class="mt-3">推奨用途</h6>
+                                <p><strong>最も推奨される構成</strong>。中小企業、製造業、医療機関など、高い信頼性と容量効率の両立が必要な環境</p>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="alert alert-success">
+                                    <strong>容量効率: 75%（4台時）</strong><br>
+                                    <strong>最小ディスク数: 3</strong><br>
+                                    <strong>耐障害性: 1台</strong><br>
+                                    <span class="badge bg-success">推奨</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm mb-4">
+                    <div class="card-header bg-light">
+                        <h5 class="mb-0">RAID 6 - ダブルパリティ</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <h6>特徴</h6>
+                                <ul>
+                                    <li>2重のパリティ情報を保存</li>
+                                    <li>2台のディスク同時故障まで耐えられる</li>
+                                    <li>容量効率はRAID 5より低い（n-2台分の容量）</li>
+                                    <li>高い信頼性</li>
+                                </ul>
+                                <h6 class="mt-3">推奨用途</h6>
+                                <p>大容量ディスク使用時、ミッションクリティカルなデータ、医療・金融機関</p>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="alert alert-primary">
+                                    <strong>容量効率: 50%（4台時）</strong><br>
+                                    <strong>最小ディスク数: 4</strong><br>
+                                    <strong>耐障害性: 2台</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm">
+                    <div class="card-header bg-light">
+                        <h5 class="mb-0">RAID 10 - ミラー＋ストライプ</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <h6>特徴</h6>
+                                <ul>
+                                    <li>RAID 1とRAID 0を組み合わせた構成</li>
+                                    <li>高速かつ高信頼性</li>
+                                    <li>容量効率は50%</li>
+                                    <li>最低4台のディスクが必要</li>
+                                </ul>
+                                <h6 class="mt-3">推奨用途</h6>
+                                <p>データベースサーバー、高速性と信頼性の両方が求められる用途</p>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="alert alert-secondary">
+                                    <strong>容量効率: 50%</strong><br>
+                                    <strong>最小ディスク数: 4</strong><br>
+                                    <strong>耐障害性: 状況による</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ネットワーク設定 -->
+            <div id="network" class="mb-5">
+                <h2 class="mb-4"><i class="fas fa-network-wired text-success me-3"></i>ネットワーク設定</h2>
+                
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover">
+                        <thead class="table-success">
+                            <tr>
+                                <th>規格</th>
+                                <th>最大速度</th>
+                                <th>実効速度</th>
+                                <th>推奨用途</th>
+                                <th>対応製品</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>1GbE</strong></td>
+                                <td>1 Gbps<br>(125 MB/s)</td>
+                                <td>約112 MB/s</td>
+                                <td>小規模オフィス<br>一般的なファイル共有</td>
+                                <td>TS-233</td>
+                            </tr>
+                            <tr class="table-light">
+                                <td><strong>2.5GbE</strong></td>
+                                <td>2.5 Gbps<br>(312.5 MB/s)</td>
+                                <td>約280 MB/s</td>
+                                <td>中小企業<br>動画・写真データ<br>CAD図面</td>
+                                <td>TS-433eU<br>TS-h765eU</td>
+                            </tr>
+                            <tr class="table-warning">
+                                <td><strong>10GbE</strong></td>
+                                <td>10 Gbps<br>(1,250 MB/s)</td>
+                                <td>約1,200 MB/s</td>
+                                <td>映像制作<br>大規模CAD<br>仮想化環境</td>
+                                <td>TS-432PXU<br>TS-H1277AFX</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="card shadow-sm mt-4">
+                    <div class="card-header bg-success text-white">
+                        <h5 class="mb-0">ネットワーク構成のポイント</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h6><i class="fas fa-check-circle text-success me-2"></i>スイッチの選定</h6>
+                                <ul>
+                                    <li>NASと同じ速度のスイッチを使用</li>
+                                    <li>ポート数は将来の拡張を考慮</li>
+                                    <li>マネージドスイッチでVLAN設定可能</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h6><i class="fas fa-check-circle text-success me-2"></i>ケーブルの選定</h6>
+                                <ul>
+                                    <li>1GbE: Cat5e以上</li>
+                                    <li>2.5GbE: Cat5e以上（推奨Cat6）</li>
+                                    <li>10GbE: Cat6A以上</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-md-6">
+                                <h6><i class="fas fa-check-circle text-success me-2"></i>リンクアグリゲーション</h6>
+                                <ul>
+                                    <li>複数ポートを束ねて帯域幅を増加</li>
+                                    <li>冗長性の確保</li>
+                                    <li>TS-433eU以上で利用可能</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h6><i class="fas fa-check-circle text-success me-2"></i>ジャンボフレーム</h6>
+                                <ul>
+                                    <li>MTUサイズを9000に設定</li>
+                                    <li>大容量転送時の効率向上</li>
+                                    <li>ネットワーク全体で設定が必要</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- セキュリティ設定 -->
+            <div id="security" class="mb-5">
+                <h2 class="mb-4"><i class="fas fa-shield-alt text-warning me-3"></i>セキュリティ設定</h2>
+                
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="card shadow-sm h-100">
+                            <div class="card-header bg-warning">
+                                <h5 class="mb-0">アクセス制御</h5>
+                            </div>
+                            <div class="card-body">
+                                <h6>ユーザー管理</h6>
+                                <ul>
+                                    <li>個人アカウントの作成（共有アカウント禁止）</li>
+                                    <li>強固なパスワードポリシーの設定</li>
+                                    <li>定期的なパスワード変更</li>
+                                    <li>不要アカウントの無効化</li>
+                                </ul>
+                                <h6 class="mt-3">共有フォルダーの権限</h6>
+                                <ul>
+                                    <li>最小権限の原則を適用</li>
+                                    <li>部署/プロジェクトごとに分離</li>
+                                    <li>読み取り専用と書き込み権限を区別</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card shadow-sm h-100">
+                            <div class="card-header bg-danger text-white">
+                                <h5 class="mb-0">暗号化</h5>
+                            </div>
+                            <div class="card-body">
+                                <h6>フォルダー暗号化</h6>
+                                <ul>
+                                    <li>AES-256暗号化を有効化</li>
+                                    <li>機密情報は必ず暗号化フォルダーに</li>
+                                    <li>暗号化キーのバックアップ</li>
+                                </ul>
+                                <h6 class="mt-3">ネットワーク通信</h6>
+                                <ul>
+                                    <li>HTTPS/SSL/TLSを有効化</li>
+                                    <li>SMB 3.0以上を使用（暗号化通信）</li>
+                                    <li>VPN経由でのリモートアクセス</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card shadow-sm h-100">
+                            <div class="card-header bg-primary text-white">
+                                <h5 class="mb-0">バックアップ</h5>
+                            </div>
+                            <div class="card-body">
+                                <h6>3-2-1ルール</h6>
+                                <ul>
+                                    <li><strong>3</strong>つのコピーを保持</li>
+                                    <li><strong>2</strong>種類の異なる媒体に保存</li>
+                                    <li><strong>1</strong>つはオフサイト（別の場所）に</li>
+                                </ul>
+                                <h6 class="mt-3">スナップショット</h6>
+                                <ul>
+                                    <li>定期的な自動スナップショット</li>
+                                    <li>ランサムウェア対策として有効</li>
+                                    <li>誤削除からの迅速な復旧</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card shadow-sm h-100">
+                            <div class="card-header bg-info text-white">
+                                <h5 class="mb-0">ファイアウォール・監視</h5>
+                            </div>
+                            <div class="card-body">
+                                <h6>ネットワークセキュリティ</h6>
+                                <ul>
+                                    <li>内蔵ファイアウォールの有効化</li>
+                                    <li>不要なポートは閉じる</li>
+                                    <li>IP制限の設定</li>
+                                    <li>自動ブロック機能の有効化</li>
+                                </ul>
+                                <h6 class="mt-3">ログ・監視</h6>
+                                <ul>
+                                    <li>アクセスログの定期確認</li>
+                                    <li>異常なアクセスの検知</li>
+                                    <li>メール通知の設定</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- よくある質問 -->
+            <div id="faq" class="mb-5">
+                <h2 class="mb-4"><i class="fas fa-question-circle text-info me-3"></i>よくある質問</h2>
+                
+                <div class="accordion" id="faqAccordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                HDDとSSDはどちらを選ぶべきですか？
+                            </button>
+                        </h2>
+                        <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                <strong>一般的にはHDDを推奨します。</strong>
+                                <ul class="mt-2">
+                                    <li><strong>HDD:</strong> コストパフォーマンスが高く、大容量データの保存に最適。耐久性も十分</li>
+                                    <li><strong>SSD:</strong> 高速だが高価。頻繁にアクセスするデータベースや仮想マシンに推奨</li>
+                                    <li><strong>ハイブリッド:</strong> SSDをキャッシュとして使用し、両方の利点を活用</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                停電時のデータ保護はどうすれば良いですか？
+                            </button>
+                        </h2>
+                        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                <strong>UPS（無停電電源装置）の導入を強く推奨します。</strong>
+                                <ul class="mt-2">
+                                    <li>停電時にNASを安全にシャットダウン</li>
+                                    <li>データ書き込み中の電源断によるデータ破損を防止</li>
+                                    <li>QNAP NASはUSB接続のUPSと連動可能</li>
+                                    <li>推奨容量：NASの消費電力の2～3倍程度</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                ディスク1台が故障したらどうなりますか？
+                            </button>
+                        </h2>
+                        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                <strong>RAID 1/5/6構成であれば、データは保護されています。</strong>
+                                <ul class="mt-2">
+                                    <li>故障ディスクを新品に交換</li>
+                                    <li>自動的にリビルド（再構築）が開始</li>
+                                    <li>リビルド中も運用は継続可能（速度は低下）</li>
+                                    <li>完了後、通常の冗長性に復帰</li>
+                                    <li><strong>重要:</strong> 故障を検知したら速やかに交換すること</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                容量が不足してきたらどうすれば良いですか？
+                            </button>
+                        </h2>
+                        <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                <strong>複数の拡張方法があります。</strong>
+                                <ul class="mt-2">
+                                    <li><strong>ディスク交換:</strong> 1台ずつより大容量のディスクに交換し、リビルド後に容量拡張</li>
+                                    <li><strong>拡張ユニット:</strong> 対応モデルでは専用の拡張ユニットを接続</li>
+                                    <li><strong>外部ストレージ:</strong> USB HDDを接続してバックアップ先として使用</li>
+                                    <li><strong>2台目のNAS:</strong> レプリケーション先として追加</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTAセクション -->
+    <section class="py-5 bg-primary text-white">
+        <div class="container text-center">
+            <h2 class="mb-4">技術的なご質問はお気軽にお問い合わせください</h2>
+            <p class="lead mb-4">専門スタッフが最適な構成をご提案いたします</p>
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+                <a href="selection.html" class="btn btn-light btn-lg px-5">
+                    <i class="fas fa-search me-2"></i>製品を選ぶ
+                </a>
+                <a href="estimate.html" class="btn btn-outline-light btn-lg px-5">
+                    <i class="fas fa-calculator me-2"></i>見積もり作成
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>QNAP NAS ソリューション提案サイト</h5>
+                    <p class="text-muted">エレコム取扱いQNAP製品の提案をサポートします</p>
+                </div>
+                <div class="col-md-3">
+                    <h6>サイトマップ</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white-50 text-decoration-none">ホーム</a></li>
+                        <li><a href="selection.html" class="text-white-50 text-decoration-none">製品選定</a></li>
+                        <li><a href="comparison.html" class="text-white-50 text-decoration-none">製品比較</a></li>
+                        <li><a href="solutions.html" class="text-white-50 text-decoration-none">業種別ソリューション</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h6>その他</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="estimate.html" class="text-white-50 text-decoration-none">見積もり作成</a></li>
+                        <li><a href="cases.html" class="text-white-50 text-decoration-none">導入事例</a></li>
+                        <li><a href="technical.html" class="text-white-50 text-decoration-none">技術資料</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="border-secondary">
+            <div class="text-center text-muted">
+                <p class="mb-0">&copy; 2025 QNAP NAS Solution. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
