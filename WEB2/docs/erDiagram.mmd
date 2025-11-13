@@ -1,0 +1,152 @@
+erDiagram
+    users ||--o{ products : "管理"
+    users ||--o{ maintenance_plans : "管理"
+    users ||--o{ setup_services : "管理"
+    users ||--o{ accessories : "管理"
+    users ||--o{ industry_recommendations : "管理"
+    users ||--o{ selection_rules : "管理"
+    
+    products ||--o{ industry_recommendations : "推奨される"
+    products ||--o{ selection_rules : "推奨される"
+    products ||--o{ selection_logs : "選定される"
+    products ||--o{ quote_items : "含まれる"
+    
+    selection_logs ||--o{ quotes : "生成する"
+    quotes ||--|{ quote_items : "含む"
+    maintenance_plans ||--o{ quote_items : "含まれる"
+    setup_services ||--o{ quote_items : "含まれる"
+    accessories ||--o{ quote_items : "含まれる"
+    
+    users {
+        int id PK
+        string username UK "ユーザー名"
+        string password_hash "パスワードハッシュ"
+        string email "メールアドレス"
+        string role "ロール (admin)"
+        boolean is_active "有効フラグ"
+        datetime last_login "最終ログイン"
+        datetime created_at "作成日時"
+        datetime updated_at "更新日時"
+    }
+    
+    products {
+        int id PK
+        string model_name UK "モデル名"
+        string series "シリーズ名"
+        string product_name "製品名"
+        decimal price "価格"
+        string capacity "容量"
+        int drive_bays "ドライブベイ数"
+        string network_speed "ネットワーク速度"
+        string cpu "CPU"
+        string ram "RAM"
+        text features "特徴"
+        string target_users "対象ユーザー"
+        boolean is_active "有効フラグ"
+        datetime created_at "作成日時"
+        datetime updated_at "更新日時"
+    }
+    
+    maintenance_plans {
+        int id PK
+        string plan_name "プラン名"
+        string duration "期間"
+        decimal price "価格"
+        text features "特徴"
+        boolean is_active "有効フラグ"
+        datetime created_at "作成日時"
+        datetime updated_at "更新日時"
+    }
+    
+    setup_services {
+        int id PK
+        string service_name "サービス名"
+        string service_type "サービスタイプ"
+        decimal price "価格"
+        text description "説明"
+        decimal estimated_hours "推定時間"
+        boolean is_active "有効フラグ"
+        datetime created_at "作成日時"
+        datetime updated_at "更新日時"
+    }
+    
+    accessories {
+        int id PK
+        string accessory_name "周辺機器名"
+        string category "カテゴリ"
+        decimal price "価格"
+        text specifications "仕様"
+        text compatible_models "互換モデル"
+        boolean is_active "有効フラグ"
+        datetime created_at "作成日時"
+        datetime updated_at "更新日時"
+    }
+    
+    industry_recommendations {
+        int id PK
+        string industry "業種"
+        string recommended_model FK "推奨モデル"
+        text reason "推奨理由"
+        text additional_notes "追加メモ"
+        int priority "優先度"
+        boolean is_active "有効フラグ"
+        datetime created_at "作成日時"
+        datetime updated_at "更新日時"
+    }
+    
+    selection_rules {
+        int id PK
+        string rule_name "ルール名"
+        int priority "優先度"
+        text conditions "条件 (JSON形式)"
+        string recommended_model FK "推奨モデル"
+        text reason "推奨理由"
+        boolean is_active "有効フラグ"
+        datetime created_at "作成日時"
+        datetime updated_at "更新日時"
+    }
+    
+    selection_logs {
+        int id PK
+        string session_id UK "セッションID"
+        text input_conditions "入力条件 (JSON)"
+        string recommended_model FK "推奨モデル"
+        string applied_rule "適用ルール名"
+        text selection_reason "選定理由"
+        string client_ip "クライアントIP"
+        string user_agent "ユーザーエージェント"
+        string referrer "参照元URL"
+        datetime created_at "作成日時"
+    }
+    
+    quotes {
+        int id PK
+        string quote_number UK "見積書番号"
+        int selection_log_id FK "選定ログID"
+        string customer_name "顧客名"
+        string customer_email "顧客メール"
+        string customer_phone "顧客電話番号"
+        string company_name "会社名"
+        string industry "業種"
+        decimal subtotal "小計"
+        decimal tax "税額"
+        decimal total "合計金額"
+        string status "ステータス"
+        text notes "備考"
+        datetime valid_until "有効期限"
+        datetime created_at "作成日時"
+        datetime updated_at "更新日時"
+    }
+    
+    quote_items {
+        int id PK
+        int quote_id FK "見積書ID"
+        string item_type "アイテムタイプ"
+        int item_id FK "アイテムID"
+        string item_name "アイテム名"
+        int quantity "数量"
+        decimal unit_price "単価"
+        decimal subtotal "小計"
+        text description "説明"
+        int sort_order "表示順"
+    }
